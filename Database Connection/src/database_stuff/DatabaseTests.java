@@ -7,20 +7,40 @@ import org.junit.Test;
 
 public class DatabaseTests
 {
+	
 	DatabaseUtility test;
 	
 	@Before
 	public void setUp()
 	{
-		test = new DatabaseUtility("questions.db");
+		test = new DatabaseUtility();
 	}
 	
 	@Test
-	public void testDatabaseConnect()
+	public void testInsertTrueFalse()
 	{
-		DatabaseUtility db1 = new DatabaseUtility("test");
-		assertTrue(test.connectDatabase());
-		assertFalse(db1.connectDatabase());
+		assertTrue(test.insertQuestion("Will it rain today", 1));
+		assertFalse(test.insertQuestion(null, 0));
 	}
-
+	
+	@Test
+	public void testInsertShortAnswer()
+	{
+		assertTrue(test.insertQuestion("Will it rain today", "Maybe, it could"));
+		assertFalse(test.insertQuestion("What is my name", null));
+	}
+	
+	@Test
+	public void testInsertMultipleChoice()
+	{
+		assertTrue(test.insertQuestion("How many children are in Mary Poppins", 2, "55", "2", "7", "25"));
+		assertFalse(test.insertQuestion("What is my name", 3, "Nick", "Fish", null, "Nothing"));
+	}
+	
+	@Test
+	public void testInsertHint()
+	{
+		assertTrue(test.insertHint(2, "shortanswer", "its possible"));
+		assertFalse(test.insertHint(8, null, null));
+	}
 }
