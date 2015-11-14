@@ -11,6 +11,9 @@
 package database_stuff;
 import java.sql.*;
 
+import questions.Question;
+import questions.QuestionFactory;
+
 public class DatabaseUtility
 {
 	private Connection conn;
@@ -56,7 +59,7 @@ public class DatabaseUtility
 
 	public boolean insertQuestion(String question, int answer)
 	{
-		String sql = "insert into truefalse values (null, ?, ?);";
+		String sql = "insert into truefalse values (null, ?, ?, 0);";
 
 		try
 		{
@@ -84,9 +87,9 @@ public class DatabaseUtility
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
 
-	public boolean insertQuestion(String question, String answer)
+	public boolean insertQuestion(String question, String answer, String keywords)
 	{
-		String sql = "insert into shortanswer values (null, ?, ?);";
+		String sql = "insert into shortanswer values (null, ?, ?, ?, 0);";
 
 		try
 		{
@@ -94,6 +97,7 @@ public class DatabaseUtility
 
 			stmt.setString(1, question);
 			stmt.setString(2, answer);
+			stmt.setString(3, keywords);
 			this.stmt.executeUpdate();
 			this.stmt = null;
 			return true;
@@ -120,7 +124,7 @@ public class DatabaseUtility
 
 	public boolean insertQuestion(String question, int answer, String option1, String option2, String option3, String option4)
 	{
-		String sql = "insert into multiplechoice values (null, ?, ?, ?, ?, ?, ?);";
+		String sql = "insert into multiplechoice values (null, ?, ?, ?, ?, ?, ?, 0);";
 
 		try
 		{
@@ -175,19 +179,19 @@ public class DatabaseUtility
 		}
 	}
 
-	public void retrieveQuestion(int id, String type) throws SQLException
+	public Question retrieveQuestion(String type)
 	{
 		String sql = "";
 		switch(type.toLowerCase())
 		{
 			case("truefalse"):
-				sql = "select * from truefalse where question_id = ?";
+				sql = "select * from truefalse where answered = 0 ORDER BY RANDOM() LIMIT 1;";
 				break;
 			case("multiplechoice"):
-				sql = "select * from multiplechoice where question_id = ?";
+				sql = "select * from multiplechoice where answered = 0 ORDER BY RANDOM() LIMIT 1;";
 				break;
 			case("shortanswer"):
-				sql = "select * from shortanswer where question_id = ?";
+				sql = "select * from shortanswer where answered = 0 ORDER BY RANDOM() LIMIT 1;";
 				break;
 			default:
 				throw new IllegalArgumentException("You have provided an invalid question type");
@@ -195,17 +199,31 @@ public class DatabaseUtility
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, id);
 			
 			ResultSet results = stmt.executeQuery();
+			Question toReturn = null;
+			QuestionFactory factory = new QuestionFactory();
+			switch(type.toLowerCase())
+			{
+				case("truefalse"):
+					toReturn = processTrueFalse(results, factory);
+					break;
+				case("multiplechoice"):
+					toReturn = processShortAnswer(results, factory);
+					break;
+				case("shortanswer"):
+					sql = "select * from shortanswer where answered = 0 ORDER BY RANDOM() LIMIT 1;";
+					break;
+			}
+			return toReturn;
 		}
 		catch(SQLException e)
 		{
-			throw new SQLException("Error retrieving question from the database, likely cause by an invalid question id");
+			return null;
 		}
 	}
 	
-	private void processTrueFalse(ResultSet results)
+	private Question processTrueFalse(ResultSet results, QuestionFactory factory)
 	{
 		try
 		{
@@ -215,17 +233,42 @@ public class DatabaseUtility
 			String booleanAnswer;
 			if(answer == 1)
 			{
-				booleanAnswer = "true";
+				booleanAnswer = "T";
 			}
 			else
 			{
-				booleanAnswer = "false";
+				booleanAnswer = "F";
 			}
-			System.out.println(id + " " + question + " " + booleanAnswer);
+
+			Question newQuestion = factory.createQuestion("truefalse");
+			newQuestion.setQuestion(question);
+			newQuestion.setCorrectAnswer(booleanAnswer);
+			return newQuestion;
 		} 
 		catch (SQLException e)
 		{
-			
+			return null;
 		}
 	}
+	
+	private Question processShortAnswer(ResultSet results, QuestionFactory factory)
+	{
+		try
+		{
+			int id = results.getInt("question_id");
+			String question = results.getString("question");
+			String answer = results.getString("answer");
+
+
+			Question newQuestion = factory.createQuestion("shortanswer");
+			newQuestion.setQuestion(question);
+			newQuestion.setCorrectAnswer(answer);
+			return newQuestion;
+		} 
+		catch (SQLException e)
+		{
+			return null;
+		}
+	}
+	
 }//End DatabaseUtility

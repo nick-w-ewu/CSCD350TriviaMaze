@@ -26,8 +26,8 @@ public class DatabaseTests
 	@Test
 	public void testInsertShortAnswer()
 	{
-		assertTrue(test.insertQuestion("Will it rain today", "Maybe, it could"));
-		assertFalse(test.insertQuestion("What is my name", null));
+		assertTrue(test.insertQuestion("Will it rain today", "Maybe, it could", "maybe, probably"));
+		assertFalse(test.insertQuestion("What is my name", null, null));
 	}
 	
 	@Test
