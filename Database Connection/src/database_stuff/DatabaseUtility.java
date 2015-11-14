@@ -29,7 +29,7 @@ public class DatabaseUtility
 	 * Returns:
 	 * boolean - true if the connection is successful and false if there is an error
 	 */
-	
+
 	private boolean connectDatabase()
 	{
 		try
@@ -53,15 +53,15 @@ public class DatabaseUtility
 	 * Returns:
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
-	
+
 	public boolean insertQuestion(String question, int answer)
 	{
 		String sql = "insert into truefalse values (null, ?, ?);";
-		
+
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
-			
+
 			stmt.setString(1, question);
 			stmt.setInt(2, answer);
 			this.stmt.executeUpdate();
@@ -83,15 +83,15 @@ public class DatabaseUtility
 	 * Returns:
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
-	
+
 	public boolean insertQuestion(String question, String answer)
 	{
 		String sql = "insert into shortanswer values (null, ?, ?);";
-		
+
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
-			
+
 			stmt.setString(1, question);
 			stmt.setString(2, answer);
 			this.stmt.executeUpdate();
@@ -117,15 +117,15 @@ public class DatabaseUtility
 	 * Returns:
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
-	
+
 	public boolean insertQuestion(String question, int answer, String option1, String option2, String option3, String option4)
 	{
 		String sql = "insert into multiplechoice values (null, ?, ?, ?, ?, ?, ?);";
-		
+
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
-			
+
 			stmt.setString(1, question);
 			stmt.setInt(2, answer);
 			stmt.setString(3, option1);
@@ -152,15 +152,15 @@ public class DatabaseUtility
 	 * Returns:
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
-	
+
 	public boolean insertHint(int id, String type, String hint)
 	{
 		String sql = "insert into hints values (?, ?, ?);";
-		
+
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
-			
+
 			stmt.setInt(1, id);
 			stmt.setString(2, type);
 			stmt.setString(3, hint);
@@ -172,6 +172,60 @@ public class DatabaseUtility
 		{
 			this.stmt = null;
 			return false;
+		}
+	}
+
+	public void retrieveQuestion(int id, String type) throws SQLException
+	{
+		String sql = "";
+		switch(type.toLowerCase())
+		{
+			case("truefalse"):
+				sql = "select * from truefalse where question_id = ?";
+				break;
+			case("multiplechoice"):
+				sql = "select * from multiplechoice where question_id = ?";
+				break;
+			case("shortanswer"):
+				sql = "select * from shortanswer where question_id = ?";
+				break;
+			default:
+				throw new IllegalArgumentException("You have provided an invalid question type");
+		}
+		try
+		{
+			this.stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, id);
+			
+			ResultSet results = stmt.executeQuery();
+		}
+		catch(SQLException e)
+		{
+			throw new SQLException("Error retrieving question from the database, likely cause by an invalid question id");
+		}
+	}
+	
+	private void processTrueFalse(ResultSet results)
+	{
+		try
+		{
+			int id = results.getInt("question_id");
+			String question = results.getString("question");
+			int answer = results.getInt("answer");
+			String booleanAnswer;
+			if(answer == 1)
+			{
+				booleanAnswer = "true";
+			}
+			else
+			{
+				booleanAnswer = "false";
+			}
+			System.out.println(id + " " + question + " " + booleanAnswer);
+		} 
+		catch (SQLException e)
+		{
+			
 		}
 	}
 }//End DatabaseUtility
