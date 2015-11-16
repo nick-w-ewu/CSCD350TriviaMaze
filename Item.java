@@ -14,4 +14,9 @@ public class Item
         this.name = "generic item";
     }
 
+    boolean useItem()
+    {
+        return true;
+    }
+
 }
