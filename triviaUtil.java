@@ -1,5 +1,12 @@
 /**
- * Created by David on 11/14/2015.
+ * TriviaUtil.java
+ * Author: David Walker
+ * Revision: 0
+ * Date: 11/10/2015
+ * This file is the Utility class of the Trivia Maze
+ * currently holds:
+ * -Save/Load functions
+ * -difficulty menu
  */
 
 import jdk.management.cmm.SystemResourcePressureMXBean;
@@ -9,14 +16,20 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class triviaUtil
+public class TriviaUtil
 {
     private static Scanner kb = new Scanner(System.in);
 
-    public static void loadSaveMenu()
+    /*
+    loadSaveMenu function
+    prompts the player with the option to load from save file, or to start a new game
+    if the choice is to load from save file, function loadSavedGame is called
+     */
+    public static Object loadSaveMenu()
     {
         int choice = -1;
         boolean goodInput;
+        Object obj = null;
 
         do {
             try
@@ -35,7 +48,7 @@ public class triviaUtil
                     goodInput = true;
                     if(choice == 1)
                     {
-                        loadSavedGame();
+                        obj = loadSavedGame();
                     }
                     else
                     {
@@ -50,6 +63,7 @@ public class triviaUtil
                 String clear = kb.nextLine();
             }
         } while(!goodInput);
+        return obj;
     }
 
     public static void saveGame(Player player) throws FileNotFoundException
@@ -68,36 +82,41 @@ public class triviaUtil
     {
         PrintWriter save = new PrintWriter(s);
 
-        System.out.println(" s " + player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
+        System.out.println(" saving: " + player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
 
         save.println(player.getName());
         save.println(player.getNumItems());
         save.println(player.getqCorrect());
         save.close();
     }
-/*
-    private String name;
-    private int numItems;
-    private int qCorrect;
-  */
 
-    public static void loadSavedGame()
+
+
+/*
+loadSavedGame function, attempts to create the file saved.ser then calls the readSaveFile
+*/
+    public static Object loadSavedGame()
     {
+        Object obj = null;
         try
         {
             File fin = new File("saved.ser");
             Scanner save = new Scanner(fin);
-            //open/read save file
 
-            readSaveFile(save);
+            //open/read save file
+            obj = readSaveFile(save);
         }
         catch (FileNotFoundException e)
         {
             System.out.println("Save file not found");
         }
+        return obj;
     }
 
-    public static void readSaveFile(Scanner save)
+    /*
+    readSaveFile function, takes a Scanner created from the save file, reads the data and recreates the objects
+     */
+    public static Object readSaveFile(Scanner save)
     {
         Player player = new Player();
         String name;
@@ -111,9 +130,10 @@ public class triviaUtil
 
             System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
         }
+        return player;
     }
 
-    public static int difficultMenu()
+    public static int difficultyMenu()
     {
         int difficulty = -1;
         boolean goodInput = false;

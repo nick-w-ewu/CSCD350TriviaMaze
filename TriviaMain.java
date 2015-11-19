@@ -21,8 +21,10 @@ public class TriviaMain
         System.out.println(user.getName() + " " + user.getNumItems() + " " + user.getqCorrect());
         System.out.println(namedUser.getName() + " " + namedUser.getNumItems() + " " + namedUser.getqCorrect());
 
-        triviaUtil.saveGame(namedUser);
-        triviaUtil.loadSaveMenu();
+        TriviaUtil.saveGame(namedUser);
+        Player player = (Player)TriviaUtil.loadSaveMenu();
+
+        System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
 
 
 
