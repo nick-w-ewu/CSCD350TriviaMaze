@@ -5,10 +5,10 @@ import java.util.Scanner;
 /**
  * Maze.java
  * Author: Jenia Rousseva
- * Revision: N/A
- * Date: 11/08/2015
+ * Revision: 2, Jenia Rousseva
+ * Date: 11/20/2015
  * This file provides the basic construction for a 2-D non-perfect maze.
- * The maze contains slots which are either walls, open spaces, or questions.
+ * The maze contains slots which are either walls, open spaces, or specific question types.
  * This file also contains the methods for traversal through the maze and 
  * for finding if a path(s) exist(s) from the start to the end of the maze.
  */
@@ -88,6 +88,21 @@ public class Maze
 		this.curCol = j;
 	}//end setPosition
 
+	
+	/*
+	 * Find the String indicator for the given cell.
+	 * Parameters:
+	 * int i - The row number to check
+	 * int j - The column number to check
+	 * Returns:
+	 * String - A String indicator for the type of String
+	 */
+	
+	private String getCellType(int i, int j)
+	{
+		return this.maze[i][j].toString();
+	}//end getCellType
+	
 	
 	/* 
 	 * Finds the start position in the maze assuming there is at least one open 
@@ -445,7 +460,8 @@ public class Maze
     
     
     /*
-     * Converts an open cell into a cell containing a question.
+     * Converts an open cell into a cell containing either a true/false, 
+     * multiple choice, or short answer question.
      * Parameters:
      * int i - A column number in the maze
      * int j - A row number in the maze
@@ -454,7 +470,16 @@ public class Maze
     {
     	if (Math.random() < PROB_QUESTION)
     	{
-    		this.maze[i][j] = CellType.QUESTION;
+    		//this.maze[i][j] = CellType.QUESTION;
+    		
+    		/* The code below determines what type of question to place in the slot. */
+    		double typeProb = Math.random();
+    		if (typeProb < 0.33)
+    			this.maze[i][j] = CellType.TFQUESTION;
+    		else if (typeProb >= 0.33 && typeProb < 0.67)
+    			this.maze[i][j] = CellType.MCQUESTION;
+    		else
+    			this.maze[i][j] = CellType.SAQUESTION; 
     	}//end if
     	else
     	{
@@ -519,7 +544,8 @@ public class Maze
 		if(mazeCopy[i][j] != CellType.WALL) 
 		{
 			if(mazeCopy[i][j] == CellType.START || mazeCopy[i][j] == CellType.OPEN ||
-				mazeCopy[i][j] == CellType.QUESTION	|| mazeCopy[i][j] == CellType.END)
+			   mazeCopy[i][j] == CellType.TFQUESTION || mazeCopy[i][j] == CellType.MCQUESTION ||
+			   mazeCopy[i][j] == CellType.SAQUESTION || mazeCopy[i][j] == CellType.END)
 				return true;
 		}//end if
 		return false;

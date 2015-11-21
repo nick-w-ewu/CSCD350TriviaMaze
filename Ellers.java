@@ -3,7 +3,7 @@ package triviamaze;
 /**
  * Ellers.java
  * Author: Jenia Rousseva
- * Revision: N/A
+ * Revision: 1, Jenia Rousseva
  * Date: 11/08/2015
  * This file implements Eller's algorithm to generate a perfect maze.
  * While the general implementation is obtained from the references below,

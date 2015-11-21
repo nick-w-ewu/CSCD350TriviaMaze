@@ -3,7 +3,7 @@ package triviamaze;
 /**
  * MazeTester.java
  * Author: Jenia Rousseva
- * Revision: N/A
+ * Revision: 1, Jenia Rousseva
  * Date: 11/08/2015
  * This file tests the generation and traversal a Maze object.
  */
