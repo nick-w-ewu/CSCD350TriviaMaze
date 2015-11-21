@@ -3,32 +3,47 @@ package triviamaze;
 /**
  * QuestionFactory.java
  * Author: Jenia Rousseva
- * Revision: N/A
- * Date: 11/09/2015
+ * Revision: 2, Jenia Rousseva
+ * Date: 11/20/2015
  * This a simple factory for the creation of one of the three types of 
  * questions: short answer, multiple choice, or true/false.
  */
 
 public class QuestionFactory 
 {
+	/*
+	 * DVC for a QuestionFactory
+	 */
+	
 	public QuestionFactory() {}
+	
+	
+	/*
+	 * Creates one of the three question types based in the 
+	 * type passed in.
+	 * Parameters:
+	 * String type - A String description of the type of question 
+	 * to create
+	 * Returns:
+	 * Question - A generic question
+	 */
 	
 	public Question createQuestion(String type) //may change the type of the parameter to int or char
 	{
 		Question question = null;
 		
-		if (type.equals("shortAnswer"))
+		if (type.equals("shortanswer"))
 		{
 			question = new ShortAnswerQuestion();
-		}
-		else if (type.equals("multipleChoice"))
+		}//end if
+		else if (type.equals("multiplechoice"))
 		{
 			question = new MultipleChoiceQuestion();
-		}
-		else if (type.equals("trueFalse"))
+		}//end else if
+		else if (type.equals("truefalse"))
 		{
 			question = new TrueFalseQuestion();
-		}
+		}//end else if
 		return question;
 	}//end createQuestion
 
