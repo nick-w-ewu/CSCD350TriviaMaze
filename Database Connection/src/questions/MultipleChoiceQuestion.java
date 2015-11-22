@@ -3,8 +3,8 @@ package questions;
 /**
  * MultipleChoiceQuestion.java
  * Author: Jenia Rousseva
- * Revision: N/A
- * Date: 11/09/2015
+ * Revision: 1, Nick Witmer
+ * Date: 11/16/2015
  * This file provides the implementation of a multiple choice question object.
  * These types of questions differ from other types in that it contains an 
  * array for the four possible answer choices. There is also a method to
@@ -14,7 +14,7 @@ package questions;
 
 public class MultipleChoiceQuestion extends Question
 {
-	private String[] choices; // a special object for an answer choice may be used here
+	private Choice[] choices; // a special object for an answer choice may be used here
 	
 	public MultipleChoiceQuestion()
 	{
@@ -22,19 +22,19 @@ public class MultipleChoiceQuestion extends Question
 		super.setPattern("((?i)[abcd])");
 	}
 	
-	public MultipleChoiceQuestion(String question, String correctAnswer, String[] choices) 
+	public MultipleChoiceQuestion(String question, String correctAnswer, Choice[] choices) 
 	{
 		super(question, correctAnswer);
 		this.choices = choices;
 		super.setPattern("((?i)[abcd])");
 	}
 	
-	public String[] getChoices() 
+	public Choice[] getChoices() 
 	{
 		return choices;
 	}
 
-	public void setChoices(String[] choices) 
+	public void setChoices(Choice[] choices) 
 	{
 		this.choices = choices;
 	}
@@ -45,7 +45,7 @@ public class MultipleChoiceQuestion extends Question
 		for (int i = 0; i < this.choices.length; i ++)
 		{
 			int j = (int)(Math.random() * this.choices.length);
-			String temp = this.choices[i];
+			Choice temp = this.choices[i];
 			this.choices[i] = this.choices[j];
 			this.choices[j] = temp;
 		}
@@ -69,7 +69,16 @@ public class MultipleChoiceQuestion extends Question
 	public String getAnswerAtIndex(char letter)
 	{	
 		int i = letter % 65;
-		return this.choices[i];
+		return this.choices[i].getOptionNumber();
+	}
+	
+	@Override
+	public boolean checkCorrectAnswer(String answer)
+	{
+		char charAnswer = answer.charAt(0);
+		String choice = getAnswerAtIndex(charAnswer);
+		
+		return super.checkCorrectAnswer(choice);
 	}
 
 	/*

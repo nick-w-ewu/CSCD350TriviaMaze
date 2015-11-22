@@ -2,13 +2,17 @@ package database_stuff;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import questions.Question;
 
 public class DatabaseTests
 {
 	
 	DatabaseUtility test;
+	int id = 1;
 	
 	@Before
 	public void setUp()
@@ -40,7 +44,19 @@ public class DatabaseTests
 	@Test
 	public void testInsertHint()
 	{
-		assertTrue(test.insertHint(2, "shortanswer", "its possible"));
+		assertTrue(test.insertHint(id++, "shortanswer", "its possible"));
 		assertFalse(test.insertHint(8, null, null));
 	}
+	
+	@Test
+	public void testretrieveQuestions()
+	{
+		Question q1 = test.retrieveQuestion("shortanswer");
+		Question q2 = test.retrieveQuestion("truefalse");
+		Question q3 = test.retrieveQuestion("multiplechoice");
+		assertEquals("t", q2.getCorrectAnswer());
+		
+	}
+
+	
 }

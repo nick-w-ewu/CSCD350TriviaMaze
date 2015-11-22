@@ -11,8 +11,7 @@
 package database_stuff;
 import java.sql.*;
 
-import questions.Question;
-import questions.QuestionFactory;
+import questions.*;
 
 public class DatabaseUtility
 {
@@ -38,7 +37,7 @@ public class DatabaseUtility
 		try
 		{
 			Class.forName("org.sqlite.JDBC");
-			conn = DriverManager.getConnection("jdbc:sqlite:questions.db");
+			conn = DriverManager.getConnection("jdbc:sqlite:questions2.db");
 
 			return true;
 		}
@@ -68,12 +67,19 @@ public class DatabaseUtility
 			stmt.setString(1, question);
 			stmt.setInt(2, answer);
 			this.stmt.executeUpdate();
-			this.stmt = null;
+			this.stmt.close();
 			return true;
 		}
 		catch (SQLException e)
 		{
-			this.stmt = null;
+			try
+			{
+				this.stmt.close();
+			} 
+			catch (SQLException e1)
+			{
+			}
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -99,12 +105,19 @@ public class DatabaseUtility
 			stmt.setString(2, answer);
 			stmt.setString(3, keywords);
 			this.stmt.executeUpdate();
-			this.stmt = null;
+			this.stmt.close();
 			return true;
 		}
 		catch (SQLException e)
 		{
-			this.stmt = null;
+			try
+			{
+				this.stmt.close();
+			} 
+			catch (SQLException e1)
+			{
+			}
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -137,12 +150,19 @@ public class DatabaseUtility
 			stmt.setString(5, option3);
 			stmt.setString(6, option4);
 			this.stmt.executeUpdate();
-			this.stmt = null;
+			this.stmt.close();
 			return true;
 		}
 		catch (SQLException e)
 		{
-			this.stmt = null;
+			try
+			{
+				this.stmt.close();
+			} 
+			catch (SQLException e1)
+			{
+			}
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -169,12 +189,19 @@ public class DatabaseUtility
 			stmt.setString(2, type);
 			stmt.setString(3, hint);
 			this.stmt.executeUpdate();
-			this.stmt = null;
+			this.stmt.close();
 			return true;
 		}
 		catch (SQLException e)
 		{
-			this.stmt = null;
+			try
+			{
+				this.stmt.close();
+			} 
+			catch (SQLException e1)
+			{
+			}
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -202,28 +229,36 @@ public class DatabaseUtility
 			
 			ResultSet results = stmt.executeQuery();
 			Question toReturn = null;
-			QuestionFactory factory = new QuestionFactory();
 			switch(type.toLowerCase())
 			{
 				case("truefalse"):
-					toReturn = processTrueFalse(results, factory);
+					toReturn = processTrueFalse(results);
 					break;
 				case("multiplechoice"):
-					toReturn = processShortAnswer(results, factory);
+					toReturn = processShortAnswer(results);
 					break;
 				case("shortanswer"):
-					sql = "select * from shortanswer where answered = 0 ORDER BY RANDOM() LIMIT 1;";
+					toReturn = processMultipleChoice(results);
 					break;
 			}
+			this.stmt.close();
 			return toReturn;
 		}
-		catch(SQLException e)
+		catch (SQLException e)
 		{
+			try
+			{
+				this.stmt.close();
+			} 
+			catch (SQLException e1)
+			{
+			}
+			e.printStackTrace();
 			return null;
 		}
 	}
 	
-	private Question processTrueFalse(ResultSet results, QuestionFactory factory)
+	private Question processTrueFalse(ResultSet results)
 	{
 		try
 		{
@@ -233,16 +268,14 @@ public class DatabaseUtility
 			String booleanAnswer;
 			if(answer == 1)
 			{
-				booleanAnswer = "T";
+				booleanAnswer = "t";
 			}
 			else
 			{
-				booleanAnswer = "F";
+				booleanAnswer = "f";
 			}
 
-			Question newQuestion = factory.createQuestion("truefalse");
-			newQuestion.setQuestion(question);
-			newQuestion.setCorrectAnswer(booleanAnswer);
+			TrueFalseQuestion newQuestion = new TrueFalseQuestion(question, booleanAnswer);
 			return newQuestion;
 		} 
 		catch (SQLException e)
@@ -251,18 +284,39 @@ public class DatabaseUtility
 		}
 	}
 	
-	private Question processShortAnswer(ResultSet results, QuestionFactory factory)
+	private Question processShortAnswer(ResultSet results)
 	{
 		try
 		{
 			int id = results.getInt("question_id");
 			String question = results.getString("question");
 			String answer = results.getString("answer");
+			String[] words = results.getString("keywords").split(",");
 
 
-			Question newQuestion = factory.createQuestion("shortanswer");
-			newQuestion.setQuestion(question);
-			newQuestion.setCorrectAnswer(answer);
+			ShortAnswerQuestion newQuestion = new ShortAnswerQuestion(question, answer, words);
+			return newQuestion;
+		} 
+		catch (SQLException e)
+		{
+			return null;
+		}
+	}
+	
+	private Question processMultipleChoice(ResultSet results)
+	{
+		try
+		{
+			int id = results.getInt("question_id");
+			String question = results.getString("question");
+			String answer = results.getString("correct_answer");
+			String option1 = results.getString("option1");
+			String option2 = results.getString("option2");
+			String option3 = results.getString("option3");
+			String option4 = results.getString("option4");
+			Choice[] choices = {new Choice(option1, "1"), new Choice(option2, "2"), new Choice(option3, "3"), new Choice(option4, "4")}; 
+
+			MultipleChoiceQuestion newQuestion = new MultipleChoiceQuestion(question, answer, choices);
 			return newQuestion;
 		} 
 		catch (SQLException e)

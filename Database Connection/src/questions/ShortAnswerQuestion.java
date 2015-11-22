@@ -3,8 +3,8 @@ package questions;
 /**
  * ShortAnswerQuestion.java
  * Author: Jenia Rousseva
- * Revision: N/A
- * Date: 11/09/2015
+ * Revision: 1, Nick Witmer 
+ * Date: 11/16/2015
  * This file provides the implementation of a short answer question object.
  * These types of questions differ from other types in that a set of keyword(s)
  * will be used to match the user's answer to the correct answer.
@@ -81,9 +81,12 @@ public class ShortAnswerQuestion extends Question
 	
 	/*
 	 *  Method to compare the user's input to the keyword(s) 
-	 *  using regex expressions.
+	 *  using regex expressions. Overrides the Question version of checkCorrectAnswer
+	 *  so that the answer can be compared to the keywords array.
+	 *  
 	 */
-	public boolean compareAnswer(String input)
+	@Override
+	public boolean checkCorrectAnswer(String input)
 	{
 		return false;
 	}
