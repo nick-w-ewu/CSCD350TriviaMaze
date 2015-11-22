@@ -17,6 +17,9 @@ public class DatabaseUtility
 {
 	private Connection conn;
 	private PreparedStatement stmt;
+	private final String TRUEFALSE = "truefalse";
+	private final String SHORTANSWER = "shortanswer";
+	private final String MULTIPLECHOICE = "multiplechoice";
 
 	/*
 	 * Initializes a new DatabaseUtility and connects to the questions database
@@ -56,7 +59,7 @@ public class DatabaseUtility
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
 
-	public boolean insertQuestion(String question, int answer)
+	public boolean insertQuestion(String question, String answer)
 	{
 		String sql = "insert into truefalse values (null, ?, ?, 0);";
 
@@ -65,7 +68,7 @@ public class DatabaseUtility
 			this.stmt = conn.prepareStatement(sql);
 
 			stmt.setString(1, question);
-			stmt.setInt(2, answer);
+			stmt.setString(2, answer);
 			this.stmt.executeUpdate();
 			this.stmt.close();
 			return true;
@@ -79,7 +82,6 @@ public class DatabaseUtility
 			catch (SQLException e1)
 			{
 			}
-			e.printStackTrace();
 			return false;
 		}
 	}
@@ -117,7 +119,6 @@ public class DatabaseUtility
 			catch (SQLException e1)
 			{
 			}
-			e.printStackTrace();
 			return false;
 		}
 	}
@@ -135,7 +136,7 @@ public class DatabaseUtility
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
 
-	public boolean insertQuestion(String question, int answer, String option1, String option2, String option3, String option4)
+	public boolean insertQuestion(String question, String answer, String option1, String option2, String option3, String option4)
 	{
 		String sql = "insert into multiplechoice values (null, ?, ?, ?, ?, ?, ?, 0);";
 
@@ -144,7 +145,7 @@ public class DatabaseUtility
 			this.stmt = conn.prepareStatement(sql);
 
 			stmt.setString(1, question);
-			stmt.setInt(2, answer);
+			stmt.setString(2, answer);
 			stmt.setString(3, option1);
 			stmt.setString(4, option2);
 			stmt.setString(5, option3);
@@ -162,7 +163,6 @@ public class DatabaseUtility
 			catch (SQLException e1)
 			{
 			}
-			e.printStackTrace();
 			return false;
 		}
 	}
@@ -201,7 +201,6 @@ public class DatabaseUtility
 			catch (SQLException e1)
 			{
 			}
-			e.printStackTrace();
 			return false;
 		}
 	}
@@ -209,6 +208,7 @@ public class DatabaseUtility
 	public Question retrieveQuestion(String type)
 	{
 		String sql = "";
+		Question toReturn = null;
 		switch(type.toLowerCase())
 		{
 			case("truefalse"):
@@ -228,23 +228,29 @@ public class DatabaseUtility
 			this.stmt = conn.prepareStatement(sql);
 			
 			ResultSet results = stmt.executeQuery();
-			Question toReturn = null;
+			QuestionFactory factory = new QuestionFactory();
+			
 			switch(type.toLowerCase())
 			{
 				case("truefalse"):
-					toReturn = processTrueFalse(results);
+					toReturn = processTrueFalse(results, factory);
 					break;
 				case("multiplechoice"):
-					toReturn = processShortAnswer(results);
+					toReturn = processMultipleChoice(results, factory);
 					break;
 				case("shortanswer"):
-					toReturn = processMultipleChoice(results);
+					toReturn = processShortAnswer(results, factory);
 					break;
 			}
-			this.stmt.close();
 			return toReturn;
 		}
 		catch (SQLException e)
+		{
+
+			e.printStackTrace();
+			return null;
+		}
+		finally
 		{
 			try
 			{
@@ -253,57 +259,54 @@ public class DatabaseUtility
 			catch (SQLException e1)
 			{
 			}
-			e.printStackTrace();
-			return null;
 		}
 	}
 	
-	private Question processTrueFalse(ResultSet results)
-	{
-		try
-		{
-			int id = results.getInt("question_id");
-			String question = results.getString("question");
-			int answer = results.getInt("answer");
-			String booleanAnswer;
-			if(answer == 1)
-			{
-				booleanAnswer = "t";
-			}
-			else
-			{
-				booleanAnswer = "f";
-			}
-
-			TrueFalseQuestion newQuestion = new TrueFalseQuestion(question, booleanAnswer);
-			return newQuestion;
-		} 
-		catch (SQLException e)
-		{
-			return null;
-		}
-	}
-	
-	private Question processShortAnswer(ResultSet results)
+	private Question processTrueFalse(ResultSet results, QuestionFactory factory)
 	{
 		try
 		{
 			int id = results.getInt("question_id");
 			String question = results.getString("question");
 			String answer = results.getString("answer");
-			String[] words = results.getString("keywords").split(",");
 
-
-			ShortAnswerQuestion newQuestion = new ShortAnswerQuestion(question, answer, words);
+			Question newQuestion = factory.createQuestion(TRUEFALSE);
+			newQuestion.setCorrectAnswer(answer);
+			newQuestion.setQuestion(question);
 			return newQuestion;
 		} 
 		catch (SQLException e)
 		{
+			e.printStackTrace();
 			return null;
 		}
 	}
 	
-	private Question processMultipleChoice(ResultSet results)
+	private Question processShortAnswer(ResultSet results, QuestionFactory factory)
+	{
+		try
+		{
+			int id = results.getInt("question_id");
+			String question = results.getString("question");
+			String answer = results.getString("answer");
+			String words = results.getString("keywords");
+			String[] keywords = words.split(",");
+
+
+			Question newQuestion = factory.createQuestion(SHORTANSWER);
+			newQuestion.setCorrectAnswer(answer);
+			newQuestion.setChoices(keywords);
+			newQuestion.setQuestion(question);
+			return newQuestion;
+		} 
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	private Question processMultipleChoice(ResultSet results, QuestionFactory factory)
 	{
 		try
 		{
@@ -314,13 +317,16 @@ public class DatabaseUtility
 			String option2 = results.getString("option2");
 			String option3 = results.getString("option3");
 			String option4 = results.getString("option4");
-			Choice[] choices = {new Choice(option1, "1"), new Choice(option2, "2"), new Choice(option3, "3"), new Choice(option4, "4")}; 
-
-			MultipleChoiceQuestion newQuestion = new MultipleChoiceQuestion(question, answer, choices);
+			String[] choices = {option1, option2, option3, option4};
+			Question newQuestion = factory.createQuestion(MULTIPLECHOICE);
+			newQuestion.setChoices(choices);
+			newQuestion.setCorrectAnswer(answer);
+			newQuestion.setQuestion(question);
 			return newQuestion;
 		} 
 		catch (SQLException e)
 		{
+			e.printStackTrace();
 			return null;
 		}
 	}
