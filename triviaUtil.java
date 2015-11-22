@@ -53,6 +53,7 @@ public class TriviaUtil
                     else
                     {
                         //create new game
+                        obj = new Player();
                     }
                 }
             }
