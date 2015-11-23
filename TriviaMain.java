@@ -15,16 +15,24 @@ public class TriviaMain
     public static void main(String args[]) throws FileNotFoundException
     {
         Scanner kb = new Scanner(System.in);
-        Player user = new Player();
-        Player namedUser = new Player("David");
 
-        System.out.println(user.getName() + " " + user.getNumItems() + " " + user.getqCorrect());
-        System.out.println(namedUser.getName() + " " + namedUser.getNumItems() + " " + namedUser.getqCorrect());
+        TriviaUtil.loadSaveMenu();
 
-        TriviaUtil.saveGame(namedUser);
-        Player player = (Player)TriviaUtil.loadSaveMenu();
+        int t;
+        do
+        {
+            t = TriviaUtil.playMenu();
+        }while(t==1);
 
-        System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
+
+
+
+
+
+        TriviaUtil.traverseMaze();
+
+
+
 
 
 

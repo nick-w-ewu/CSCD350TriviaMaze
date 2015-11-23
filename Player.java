@@ -8,6 +8,7 @@
  */
 
 import java.io.Serializable;
+import java.util.Scanner;
 
 public class Player implements Serializable
 {
@@ -18,7 +19,7 @@ public class Player implements Serializable
     //Default constructor,
     Player()
     {
-        this.name = "Player";
+        this.name = playerName();
         this.numItems = 0;
         this.qCorrect = 0;
     }
@@ -29,6 +30,26 @@ public class Player implements Serializable
         this.name = name;
         this.numItems = 0;
         this.qCorrect = 0;
+    }
+
+    String playerName()
+    {
+        //Player player = new Player();
+        Scanner kb = new Scanner(System.in);
+        String n = "";
+        do
+        {
+            System.out.println("What's your name?");
+            n = kb.nextLine();
+
+            if (n.length() < 1)
+            {
+                System.out.println("Name must be at least 1 character");
+            }
+        }while(n.length() >= 1);
+
+        //player.setName(name);
+        return n;
     }
 
     //Not sure of what all gets/sets we're gonna end up needing, so just have them all for now

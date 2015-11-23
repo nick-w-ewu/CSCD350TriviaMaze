@@ -1,16 +1,17 @@
 /**
  * TriviaUtil.java
  * Author: David Walker
- * Revision: 0
+ * Revision: 1
  * Date: 11/10/2015
  * This file is the Utility class of the Trivia Maze
  * currently holds:
  * -Save/Load functions
  * -difficulty menu
+ * -Tied together with Maze/Player classes
  */
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import jdk.management.cmm.SystemResourcePressureMXBean;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -19,17 +20,18 @@ import java.util.Scanner;
 public class TriviaUtil
 {
     private static Scanner kb = new Scanner(System.in);
+    private static Maze maze;
+    private static Player player;
 
     /*
     loadSaveMenu function
     prompts the player with the option to load from save file, or to start a new game
     if the choice is to load from save file, function loadSavedGame is called
      */
-    public static Object loadSaveMenu()
+    public static void loadSaveMenu()
     {
         int choice = -1;
         boolean goodInput;
-        Object obj = null;
 
         do {
             try
@@ -48,12 +50,11 @@ public class TriviaUtil
                     goodInput = true;
                     if(choice == 1)
                     {
-                        obj = loadSavedGame();
+                        loadSavedGame();
                     }
                     else
                     {
-                        //create new game
-                        obj = new Player();
+                        createNewGame();
                     }
                 }
             }
@@ -64,22 +65,32 @@ public class TriviaUtil
                 String clear = kb.nextLine();
             }
         } while(!goodInput);
-        return obj;
     }
 
     public static void saveGame(Player player) throws FileNotFoundException
     {
         File save = new File("saved.ser");
         boolean exists = save.exists();
+        boolean overwrite = false;
+        String choice;
 
-        //if(!exists)
-        //{
-            createSave(save, player);
-        //}
+        if(!exists)
+        {
+            System.out.println("Would you like to overwrite your save? (Y/N)");
+            choice = kb.nextLine();
+            if(choice.compareToIgnoreCase("Yes") == 0 || choice.compareToIgnoreCase("y") == 0)
+            {
+                createSave(save);
+            }
+            else
+            {
+                System.out.println("Game not saved");
+            }
+        }
 
     }
 
-    public static void createSave(File s, Player player) throws FileNotFoundException
+    public static void createSave(File s) throws FileNotFoundException
     {
         PrintWriter save = new PrintWriter(s);
 
@@ -91,12 +102,16 @@ public class TriviaUtil
         save.close();
     }
 
-
+    public static void createNewGame()
+    {
+        maze = new Maze(3,3);
+        player = new Player();
+    }
 
 /*
 loadSavedGame function, attempts to create the file saved.ser then calls the readSaveFile
 */
-    public static Object loadSavedGame()
+    public static void loadSavedGame()
     {
         Object obj = null;
         try
@@ -105,21 +120,19 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
             Scanner save = new Scanner(fin);
 
             //open/read save file
-            obj = readSaveFile(save);
+            readSaveFile(save);
         }
         catch (FileNotFoundException e)
         {
             System.out.println("Save file not found");
         }
-        return obj;
     }
 
     /*
     readSaveFile function, takes a Scanner created from the save file, reads the data and recreates the objects
      */
-    public static Object readSaveFile(Scanner save)
+    public static void readSaveFile(Scanner save)
     {
-        Player player = new Player();
         String name;
         int numItems, qCorrect;
         while(save.hasNextLine())
@@ -131,7 +144,6 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
 
             System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
         }
-        return player;
     }
 
     public static int difficultyMenu()
@@ -165,6 +177,48 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
         } while (!goodInput);
 
         return difficulty;
+    }
+
+    public static int playMenu()
+    {
+        int choice = -1;
+        boolean goodInput = false;
+
+        do
+        {
+            try
+            {
+                System.out.println("What would you like to do?");
+                System.out.println("1) Traverse Maze");
+                System.out.println("2) Save Game");
+                System.out.println("3) Quit without saving");
+
+                choice = kb.nextInt();
+
+                if (choice > 3 || choice < 1)
+                {
+                    System.out.println("Input is not a valid choice, try again");
+                    goodInput = false;
+                }
+                else
+                {
+                    goodInput = true;
+                }
+            } catch (Exception e)
+            {
+                System.out.println("Input is not a valid integer, try again");
+                goodInput = false;
+                String clear = kb.nextLine();
+            }
+        } while (!goodInput);
+
+        return choice;
+    }
+
+    public static void traverseMaze()
+    {
+            maze.print();
+            maze.getDirection();
     }
 
 
