@@ -1,10 +1,11 @@
 /**
  *DatabaseUtility.java
  *Author: Nicholas Witmer
- *Revision: 1, Nicholas Witmer
- *Date: 11/4/2015
+ *Revision: 2, Nicholas Witmer
+ *Date: 11/22/2015
  *Utility to connect to a specified SQLite database and provides functionality to insert
- *3 types of questions and hints for those questions into the database.
+ *3 types of questions and hints for those questions into the database. This utility also
+ *allows a client class to retrieve a random question given the type from the database
  *
  */
 
@@ -20,10 +21,12 @@ public class DatabaseUtility
 	private final String TRUEFALSE = "truefalse";
 	private final String SHORTANSWER = "shortanswer";
 	private final String MULTIPLECHOICE = "multiplechoice";
+	private final String ERROR = "error";
 
 	/*
 	 * Initializes a new DatabaseUtility and connects to the questions database
 	 */
+	
 	public DatabaseUtility()
 	{
 		connectDatabase();
@@ -205,10 +208,19 @@ public class DatabaseUtility
 		}
 	}
 
+	/*
+	 * Retrieves a random question from the database given a question type
+	 * Parameters:
+	 * String type - the type of question to retrieve
+	 * Returns:
+	 * Question - returns a randomly selected question of the type specified if the retrieval was successful and returns an ErrorQuestion if the retrieval was unsuccessful
+	 */
+	
 	public Question retrieveQuestion(String type)
 	{
 		String sql = "";
 		Question toReturn = null;
+		QuestionFactory factory = new QuestionFactory();
 		switch(type.toLowerCase())
 		{
 			case("truefalse"):
@@ -226,9 +238,7 @@ public class DatabaseUtility
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
-			
 			ResultSet results = stmt.executeQuery();
-			QuestionFactory factory = new QuestionFactory();
 			
 			switch(type.toLowerCase())
 			{
@@ -246,9 +256,7 @@ public class DatabaseUtility
 		}
 		catch (SQLException e)
 		{
-
-			e.printStackTrace();
-			return null;
+			return factory.createQuestion(ERROR);
 		}
 		finally
 		{
@@ -261,6 +269,15 @@ public class DatabaseUtility
 			}
 		}
 	}
+	
+	/*
+	 * Processes the ResultSet for a truefalse question retrieved from the database
+	 * Parameters:
+	 * ResultSet results - the result set returned from the select query in retrieveQuestion()
+	 * QuestionFactory factory - a QuestionFactory to create the question to be returned
+	 * Returns:
+	 * Question - returns a Question containing the data retrieved from the database if successful and returns an ErrorQuestion if the retrieval was unsuccessful
+	 */
 	
 	private Question processTrueFalse(ResultSet results, QuestionFactory factory)
 	{
@@ -277,10 +294,18 @@ public class DatabaseUtility
 		} 
 		catch (SQLException e)
 		{
-			e.printStackTrace();
-			return null;
+			return factory.createQuestion(ERROR);
 		}
 	}
+	
+	/*
+	 * Processes the ResultSet for a shortanswer question retrieved from the database
+	 * Parameters:
+	 * ResultSet results - the result set returned from the select query in retrieveQuestion()
+	 * QuestionFactory factory - a QuestionFactory to create the question to be returned
+	 * Returns:
+	 * Question - returns a Question containing the data retrieved from the database if successful and returns an ErrorQuestion if the retrieval was unsuccessful
+	 */
 	
 	private Question processShortAnswer(ResultSet results, QuestionFactory factory)
 	{
@@ -301,10 +326,18 @@ public class DatabaseUtility
 		} 
 		catch (SQLException e)
 		{
-			e.printStackTrace();
-			return null;
+			return factory.createQuestion(ERROR);
 		}
 	}
+	
+	/*
+	 * Processes the ResultSet for a multiplechoice question retrieved from the database
+	 * Parameters:
+	 * ResultSet results - the result set returned from the select query in retrieveQuestion()
+	 * QuestionFactory factory - a QuestionFactory to create the question to be returned
+	 * Returns:
+	 * Question - returns a Question containing the data retrieved from the database if successful and returns an ErrorQuestion if the retrieval was unsuccessful
+	 */
 	
 	private Question processMultipleChoice(ResultSet results, QuestionFactory factory)
 	{
@@ -326,8 +359,7 @@ public class DatabaseUtility
 		} 
 		catch (SQLException e)
 		{
-			e.printStackTrace();
-			return null;
+			return factory.createQuestion(ERROR);
 		}
 	}
 	
