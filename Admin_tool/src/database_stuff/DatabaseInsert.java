@@ -1,5 +1,5 @@
 /**
- *DatabaseUtility.java
+ *DatabaseInsert.java
  *Author: Nicholas Witmer
  *Revision: 1, Nicholas Witmer
  *Date: 11/27/2015
@@ -127,7 +127,7 @@ public class DatabaseInsert
 	 * Inserts a multiplechoice question into the database
 	 * Parameters:
 	 * String question - the question to be inserted into the database
-	 * int answer - the option which is the correct answer for the question
+	 * String answer - the option which is the correct answer for the question
 	 * String option1 - an option for the question
 	 * String option2 - an option for the question
 	 * String option3 - an option for the question
