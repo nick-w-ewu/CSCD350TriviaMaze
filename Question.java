@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * Question.java
  * Author: Jenia Rousseva
- * Revision: 2, Jenia Rousseva
- * Date: 11/19/2015
+ * Revision: 3, Nick Witmer
+ * Date: 11/22/2015
  * This file provides the implementation of an abstract class for a generic
  * question. All questions must have a question itself and a correct answer.
  * The class also contains an abstract method called hint.
@@ -22,6 +22,7 @@ public abstract class Question
 	private String pattern;  // a regex pattern for input validation
 	private String[] choices;
 	private String hint;
+	private boolean error;//indicates if there was an error with the question, should be checked before using the question
 	
 	
 	/*
@@ -37,6 +38,7 @@ public abstract class Question
 		this.question = question;
 		this.correctAnswer = correctAnswer;
 		this.pattern = "(.*?)"; //matches anything
+		this.error = false;
 	}//end Question
 	
 	
@@ -148,6 +150,27 @@ public abstract class Question
 		return this.hint;
 	}//end getHint
 	
+	/*
+	 * Set the Question's error field.
+	 * Parameters:
+	 * Boolean error - the error status for the question
+	 */
+	
+	public void setError(boolean error)
+	{
+		this.error = error;
+	}
+	
+	/*
+	 * Return the Question's error field.
+	 * Returns:
+	 * Boolean - the error field
+	 */
+	
+	public boolean getError()
+	{
+		return this.error;
+	}
 	
 	/*
 	 * Check if the answer passed in is the correct answer, ignoring 

@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * Maze.java
  * Author: Jenia Rousseva
- * Revision: 2, Jenia Rousseva
- * Date: 11/20/2015
+ * Revision: 3, Jenia Rousseva
+ * Date: 11/28/2015
  * This file provides the basic construction for a 2-D non-perfect maze.
  * The maze contains slots which are either walls, open spaces, or specific question types.
  * This file also contains the methods for traversal through the maze and 
@@ -90,25 +90,47 @@ public class Maze
 
 	
 	/*
-	 * Find the String indicator for the given cell.
-	 * Parameters:
-	 * int i - The row number to check
-	 * int j - The column number to check
+	 * Find the type of question to obtain depending on the value 
+	 * at the given position. 
+	 * This method is to be called if getLandOnQuestion returns true;
 	 * Returns:
-	 * String - A String indicator for the type of String
+	 * String - A String indicator for the type of question
 	 */
 	
-	private String getCellType(int i, int j)
+	public String getQuestionType()
 	{
-		return this.maze[i][j].toString();
-	}//end getCellType
+		CellType ques = this.maze[this.curRow][this.curCol];
+		if (ques == CellType.TFQUESTION)
+			return "truefalse";
+		else if (ques == CellType.MCQUESTION)
+			return "multiplechoice";
+		else if (ques == CellType.SAQUESTION)
+			return "shortanswer";
+		else
+			return "error"; 
+	}//end getQuestionType
 	
+	
+	/*
+	 * Returns a boolean value indicating whether the current position is a 
+	 * question space or not. If this method calls true, we want to call
+	 * getQuestionType.
+	 * Returns:
+	 * boolean - true if the current space is one of the three types of questions
+	 */
+	
+	public boolean getLandOnQuestion()
+	{
+		return  (this.maze[this.curRow][this.curCol] == CellType.TFQUESTION || 
+			this.maze[this.curRow][this.curCol] == CellType.MCQUESTION ||
+			this.maze[this.curRow][this.curCol] == CellType.SAQUESTION);	
+	}//end getLandOnQuestion
+
 	
 	/* 
 	 * Finds the start position in the maze assuming there is at least one open 
 	 * slot in the column 1 of the maze based on the maze generated using
 	 * Eller's algorithm. Returns as soon as the cell marked with an 'S' is found.
-     * 
 	*/ 
 	
     private void findEntrance()

@@ -3,8 +3,8 @@ package triviamaze;
 /**
  * QuestionFactory.java
  * Author: Jenia Rousseva
- * Revision: 2, Jenia Rousseva
- * Date: 11/20/2015
+ * Revision: 3, Nick Witmer
+ * Date: 11/22/2015
  * This a simple factory for the creation of one of the three types of 
  * questions: short answer, multiple choice, or true/false.
  */
@@ -44,6 +44,10 @@ public class QuestionFactory
 		{
 			question = new TrueFalseQuestion();
 		}//end else if
+		else if(type.equals("error"))
+		{
+			question = new ErrorQuestion();
+		}
 		return question;
 	}//end createQuestion
 
