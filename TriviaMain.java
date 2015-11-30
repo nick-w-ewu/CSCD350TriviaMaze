@@ -28,14 +28,15 @@ public class TriviaMain
             }
             else if(t == 2)
             {
+                TriviaUtil.saveGame();
                 //save
             }
             else
             {
-                //quit w/o save or just quit?
+                //quit
             }
 
-        }while(t==1);
+        }while(t==1 || t==2);
 
 
 

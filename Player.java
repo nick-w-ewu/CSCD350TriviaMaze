@@ -46,7 +46,7 @@ public class Player implements Serializable
             {
                 System.out.println("Name must be at least 1 character");
             }
-        }while(n.length() >= 1);
+        }while(n.length() <= 1);
 
         //player.setName(name);
         return n;

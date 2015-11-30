@@ -1,5 +1,6 @@
 //package triviamaze;
 
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -73,8 +74,34 @@ public class Maze
 	{
 		return this.isEnd;
 	}//end getIsEnd
-	
-	
+
+	 /*
+	 * Returns the maze
+	 * using it for the writing to save file process
+	 */
+	public CellType[][] getMaze()
+	{
+		return maze;
+	}
+
+	/*
+* Overridden to accept PrintWriter for writing/file saving
+* Parameter:
+* CellType[][] mazeCopy - The maze to be printed
+*/
+	protected void printMaze(PrintWriter pout)
+	{
+		for(int i = 0; i < maze.length; i++)
+		{
+			for(int j=0; j < maze.length; j++)
+			{
+				pout.print(maze[i][j] + " ");
+			}//end for
+			pout.println();
+		}//end for
+		pout.println();
+	}//end printMaze
+
 	/*
 	 * Resets the current row and column.
 	 * Parameters:
@@ -186,15 +213,15 @@ public class Maze
 		
 		printMaze(result);
 	}//end print
-	
-	
+
+
 	/*
 	 * This is a private method that to print a maze. It is used for
 	 * debugging purposes
 	 * Parameter:
 	 * CellType[][] mazeCopy - The maze to be printed
 	 */
-	
+
 	private void printMaze(CellType[][] mazeCopy)
 	{
 		for(int i = 0; i < mazeCopy.length; i++)
@@ -207,6 +234,7 @@ public class Maze
 		}//end for
 		System.out.println();
 	}//end printMaze
+
 	
 	
 	/*

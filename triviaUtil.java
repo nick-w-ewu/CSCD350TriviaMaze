@@ -67,17 +67,19 @@ public class TriviaUtil
         } while(!goodInput);
     }
 
-    public static void saveGame(Player player) throws FileNotFoundException
+    public static void saveGame() throws FileNotFoundException
     {
         File save = new File("saved.ser");
         boolean exists = save.exists();
         boolean overwrite = false;
         String choice;
 
-        if(!exists)
+        if(exists)
         {
             System.out.println("Would you like to overwrite your save? (Y/N)");
+            kb.nextLine();
             choice = kb.nextLine();
+
             if(choice.compareToIgnoreCase("Yes") == 0 || choice.compareToIgnoreCase("y") == 0)
             {
                 createSave(save);
@@ -99,6 +101,7 @@ public class TriviaUtil
         save.println(player.getName());
         save.println(player.getNumItems());
         save.println(player.getqCorrect());
+        maze.printMaze(save); //save maze so it can be loaded
         save.close();
     }
 
