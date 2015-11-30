@@ -22,14 +22,21 @@ public class TriviaMain
         do
         {
             t = TriviaUtil.playMenu();
+            if(t == 1)
+            {
+                TriviaUtil.traverseMaze();
+            }
+            else if(t == 2)
+            {
+                //save
+            }
+            else
+            {
+                //quit w/o save or just quit?
+            }
+
         }while(t==1);
 
-
-
-
-
-
-        TriviaUtil.traverseMaze();
 
 
 
