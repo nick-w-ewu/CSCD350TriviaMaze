@@ -49,8 +49,8 @@ public class Maze
 		Ellers ellerMaze = new Ellers(rows, cols);
 		this.maze = ellerMaze.getMaze();
 
-		this.numCols = cols;
-		this.numRows = rows;
+		this.numCols = cols* 2 + 1;
+		this.numRows = rows* 2 + 1;
 
 		findEntrance();
 		findExit();

@@ -37,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+              <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -45,34 +45,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Maze.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Maze.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Maze.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.962963">
-              <caret line="764" column="31" selection-start-line="764" selection-start-column="31" selection-end-line="764" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.84158415">
+              <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2353#2354#0" expanded="true" />
-                <element signature="e#2371#2372#0" expanded="true" />
-                <element signature="e#2870#2871#0" expanded="true" />
-                <element signature="e#2910#2911#0" expanded="true" />
-                <element signature="e#18408#18409#0" expanded="true" />
-                <element signature="e#18429#18430#0" expanded="true" />
-                <element signature="e#18470#18471#0" expanded="true" />
-                <element signature="e#18499#18500#0" expanded="true" />
-                <element signature="e#18528#18529#0" expanded="true" />
-                <element signature="e#18549#18550#0" expanded="true" />
-                <element signature="e#18590#18591#0" expanded="true" />
-                <element signature="e#18619#18620#0" expanded="true" />
+                <element signature="e#18604#18605#0" expanded="true" />
+                <element signature="e#18633#18634#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ellers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ellers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="52" column="41" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#10399#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13465346">
+            <state vertical-scroll-proportion="0.0">
               <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -103,8 +105,8 @@
         <option value="$PROJECT_DIR$/saved.ser" />
         <option value="$PROJECT_DIR$/TriviaMain.java" />
         <option value="$PROJECT_DIR$/Player.java" />
-        <option value="$PROJECT_DIR$/Maze.java" />
         <option value="$PROJECT_DIR$/TriviaUtil.java" />
+        <option value="$PROJECT_DIR$/Maze.java" />
       </list>
     </option>
   </component>
@@ -144,9 +146,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -663,15 +665,16 @@
       <workItem from="1448852377412" duration="748000" />
       <workItem from="1448913760398" duration="11054000" />
       <workItem from="1448942664188" duration="5551000" />
+      <workItem from="1448948845654" duration="218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29186000" />
+    <option name="totallyTimeSpent" value="29404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -723,6 +726,48 @@
     <entry file="file://$PROJECT_DIR$/TriviaMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Maze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="764" column="31" selection-start-line="764" selection-start-column="31" selection-end-line="764" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#18604#18605#0" expanded="true" />
+            <element signature="e#18633#18634#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2065#2066#0" expanded="true" />
+            <element signature="e#2099#2100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TriviaMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding />
         </state>
@@ -744,18 +789,8 @@
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2353#2354#0" expanded="true" />
-            <element signature="e#2371#2372#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-            <element signature="e#2910#2911#0" expanded="true" />
-            <element signature="e#18408#18409#0" expanded="true" />
-            <element signature="e#18429#18430#0" expanded="true" />
-            <element signature="e#18470#18471#0" expanded="true" />
-            <element signature="e#18499#18500#0" expanded="true" />
-            <element signature="e#18528#18529#0" expanded="true" />
-            <element signature="e#18549#18550#0" expanded="true" />
-            <element signature="e#18590#18591#0" expanded="true" />
-            <element signature="e#18619#18620#0" expanded="true" />
+            <element signature="e#18604#18605#0" expanded="true" />
+            <element signature="e#18633#18634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -804,18 +839,8 @@
           <caret line="244" column="43" selection-start-line="244" selection-start-column="43" selection-end-line="244" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2353#2354#0" expanded="true" />
-            <element signature="e#2371#2372#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-            <element signature="e#2910#2911#0" expanded="true" />
-            <element signature="e#18408#18409#0" expanded="true" />
-            <element signature="e#18429#18430#0" expanded="true" />
-            <element signature="e#18470#18471#0" expanded="true" />
-            <element signature="e#18499#18500#0" expanded="true" />
-            <element signature="e#18528#18529#0" expanded="true" />
-            <element signature="e#18549#18550#0" expanded="true" />
-            <element signature="e#18590#18591#0" expanded="true" />
-            <element signature="e#18619#18620#0" expanded="true" />
+            <element signature="e#18604#18605#0" expanded="true" />
+            <element signature="e#18633#18634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -864,18 +889,8 @@
           <caret line="244" column="43" selection-start-line="244" selection-start-column="43" selection-end-line="244" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2353#2354#0" expanded="true" />
-            <element signature="e#2371#2372#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-            <element signature="e#2910#2911#0" expanded="true" />
-            <element signature="e#18408#18409#0" expanded="true" />
-            <element signature="e#18429#18430#0" expanded="true" />
-            <element signature="e#18470#18471#0" expanded="true" />
-            <element signature="e#18499#18500#0" expanded="true" />
-            <element signature="e#18528#18529#0" expanded="true" />
-            <element signature="e#18549#18550#0" expanded="true" />
-            <element signature="e#18590#18591#0" expanded="true" />
-            <element signature="e#18619#18620#0" expanded="true" />
+            <element signature="e#18604#18605#0" expanded="true" />
+            <element signature="e#18633#18634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -934,21 +949,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ellers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#10399#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CellType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="53" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2065#2066#0" expanded="true" />
+            <element signature="e#2099#2100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ellers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#10399#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -971,7 +998,7 @@
     <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -980,34 +1007,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Maze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.962963">
-          <caret line="764" column="31" selection-start-line="764" selection-start-column="31" selection-end-line="764" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.84158415">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2353#2354#0" expanded="true" />
-            <element signature="e#2371#2372#0" expanded="true" />
-            <element signature="e#2870#2871#0" expanded="true" />
-            <element signature="e#2910#2911#0" expanded="true" />
-            <element signature="e#18408#18409#0" expanded="true" />
-            <element signature="e#18429#18430#0" expanded="true" />
-            <element signature="e#18470#18471#0" expanded="true" />
-            <element signature="e#18499#18500#0" expanded="true" />
-            <element signature="e#18528#18529#0" expanded="true" />
-            <element signature="e#18549#18550#0" expanded="true" />
-            <element signature="e#18590#18591#0" expanded="true" />
-            <element signature="e#18619#18620#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13465346">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2065#2066#0" expanded="true" />
-            <element signature="e#2099#2100#0" expanded="true" />
+            <element signature="e#18604#18605#0" expanded="true" />
+            <element signature="e#18633#18634#0" expanded="true" />
           </folding>
         </state>
       </provider>
