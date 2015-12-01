@@ -22,7 +22,13 @@ public class Maze
 	static final double PROB_OPEN = 0.5;
 	static final double PROB_QUESTION = 0.65;
 
-	private int curRow, curCol, prevRow, prevCol;
+	private int curRow;
+	private int curCol;
+	private int prevRow;
+	private int prevCol;
+
+	private int numRows;
+	private int numCols;
 	private CellType[][] maze;
 	
 	private boolean isEnd;
@@ -43,29 +49,32 @@ public class Maze
 		Ellers ellerMaze = new Ellers(rows, cols);
 		this.maze = ellerMaze.getMaze();
 
+		this.numCols = cols;
+		this.numRows = rows;
+
 		findEntrance();
 		findExit();
 
-		System.out.println("Before Find Path");
-		printMaze(this.maze);
+		//System.out.println("Before Find Path");
+		//printMaze(this.maze);
 
 		findPath(this.maze, this.curRow, this.curCol, true);
 
-		System.out.println("BEFORE setting the final maze!");
-		printMaze(this.maze);
+		//System.out.println("BEFORE setting the final maze!");
+		//printMaze(this.maze);
 
 		setFinalMaze();
 
-		System.out.println("After setting the final maze!");
-		printMaze(this.maze);
+		//System.out.println("After setting the final maze!");
+		//printMaze(this.maze);
 
 		CellType[][] copy = createCopy(this.maze);
 
-		System.out.println("curRow = " + this.curRow + "  curCol = " + this.curCol);
+		//System.out.println("curRow = " + this.curRow + "  curCol = " + this.curCol);
 		copy[this.curRow][this.curCol] = CellType.START;
 
-		System.out.println("Total number of possible paths to the end: " + findAllPaths(copy, this.curRow, curCol));
-		printMaze(this.maze);
+		//System.out.println("Total number of possible paths to the end: " + findAllPaths(copy, this.curRow, curCol));
+		//printMaze(this.maze);
 	}//Maze
 	
 	
@@ -88,24 +97,6 @@ public class Maze
 	{
 		return maze;
 	}
-
-	/*
-* Overridden to accept PrintWriter for writing/file saving
-* Parameter:
-* CellType[][] mazeCopy - The maze to be printed
-*/
-	protected void printMaze(PrintWriter pout)
-	{
-		for(int i = 0; i < maze.length; i++)
-		{
-			for(int j=0; j < maze.length; j++)
-			{
-				pout.print(maze[i][j] + " ");
-			}//end for
-			pout.println();
-		}//end for
-		pout.println();
-	}//end printMaze
 
 	/*
 	 * Resets the current row and column.
@@ -686,4 +677,107 @@ public class Maze
 		}
 	}
 
+	public static void loadMaze(CellType[][] maze, int i, int j, String cell)
+	{
+		CellType c;
+
+		if(cell.equals("S"))
+		{
+			c = CellType.START;
+		}
+		else if(cell.equals("G"))
+		{
+			c =  CellType.END;
+		}
+		else if(cell.equals("O"))
+		{
+			c =  CellType.OPEN;
+		}
+		else if(cell.equals("W"))
+		{
+			c =  CellType.WALL;
+		}
+		else if(cell.equals("?"))
+		{
+			c =  CellType.QUESTION;
+		}
+		else if(cell.equals("V"))
+		{
+			c =  CellType.VISITED;
+		}
+		else if(cell.equals("."))
+		{
+			c =  CellType.SUCCESS;
+		}
+		else if(cell.equals("#"))
+		{
+			c = CellType.BEEN_HERE;
+		}
+		else if(cell.equals("_"))
+		{
+			c =  CellType.BLANK;
+		}
+		else if(cell.equals("P"))
+		{
+			c =  CellType.PLAYER;
+		}
+		else if(cell.equals(" "))
+		{
+			c =  CellType.EMPTY;
+		}
+		else if(cell.equals("1"))
+		{
+			c =  CellType.TFQUESTION;
+		}
+		else if(cell.equals("2"))
+		{
+			c =  CellType.MCQUESTION;
+		}
+		else if(cell.equals("3"))
+		{
+			c =  CellType.SAQUESTION;
+		}
+		else
+		{
+			c = CellType.BLANK;
+		}
+
+		maze[i][j] = c;
+	}//end setPosition
+
+	public int getNumRows()
+	{
+		return numRows;
+	}
+
+	public void setNumRows(int numRows)
+	{
+		this.numRows = numRows;
+	}
+
+	public int getNumCols()
+	{
+		return numCols;
+	}
+
+	public void setNumCols(int numCols)
+	{
+		this.numCols = numCols;
+	}
+
+	/*
+* Overridden to accept PrintWriter for writing/file saving
+* Parameter:
+* CellType[][] mazeCopy - The maze to be printed
+*/
+	protected void printMaze(PrintWriter pout)
+	{
+		for(int i = 0; i < maze.length; i++)
+		{
+			for(int j=0; j < maze.length; j++)
+			{
+				pout.println(maze[i][j]);
+			}//end for
+		}//end for
+	}//end printMaze
 }//end Maze

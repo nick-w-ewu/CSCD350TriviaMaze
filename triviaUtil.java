@@ -37,12 +37,13 @@ public class TriviaUtil
         boolean goodInput;
 
         do {
-            try
-            {
+            //try
+           // {
                 System.out.println("What would you like to do?");
                 System.out.println("1) Load saved game");
                 System.out.println("2) Start a new game");
                 choice = kb.nextInt();
+
                 if(choice != 1 && choice != 2)
                 {
                     System.out.println("Input is not a valid choice, try again");
@@ -60,13 +61,13 @@ public class TriviaUtil
                         createNewGame();
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                System.out.println("Input is not a valid choice, try again");
-                goodInput = false;
-                String clear = kb.nextLine();
-            }
+           // }
+           // catch (Exception e)
+           // {
+           //     System.out.println("Input is not valid, try again");
+           //     goodInput = false;
+           //     String clear = kb.nextLine();
+           // }
         } while(!goodInput);
     }
 
@@ -141,16 +142,27 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
     {
         String name;
         int numItems, qCorrect;
-        while(save.hasNextLine())
-        {
 
+        maze = new Maze(3, 3);
+        player = new Player("loadingfromSave");
+
+        int r = maze.getNumRows();
+        int c = maze.getNumCols();
+
+        if(save.hasNext())
+        {
             player.setName(save.nextLine());
             player.setNumItems(Integer.parseInt(save.nextLine()));
             player.setqCorrect(Integer.parseInt(save.nextLine()));
 
-            while(save.hasNextLine())
+            for(int x = 0; x < r; x++)
             {
-                //load in maze
+                for(int y = 0; y < c; y++)
+                {
+                    String cell = save.nextLine();
+                    System.out.println("cell " + cell);
+                    Maze.loadMaze(maze.getMaze(), x, y, cell);
+                }
             }
 
             System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
