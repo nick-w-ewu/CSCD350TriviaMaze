@@ -15,6 +15,10 @@ public class Player implements Serializable
     private String name;
     private int numItems;
     private int qCorrect;
+    private long sTime;
+
+
+    private long eTime;
 
     //Default constructor,
     Player()
@@ -22,6 +26,7 @@ public class Player implements Serializable
         this.name = playerName();
         this.numItems = 0;
         this.qCorrect = 0;
+        this.sTime = System.currentTimeMillis();
     }
 
     //Constructor that initializes the Player obj with a name
@@ -30,6 +35,7 @@ public class Player implements Serializable
         this.name = name;
         this.numItems = 0;
         this.qCorrect = 0;
+        this.sTime = System.currentTimeMillis();
     }
 
     String playerName()
@@ -46,7 +52,7 @@ public class Player implements Serializable
             {
                 System.out.println("Name must be at least 1 character");
             }
-        }while(n.length() <= 1);
+        }while(n.length() < 1);
 
         //player.setName(name);
         return n;
@@ -82,5 +88,26 @@ public class Player implements Serializable
     public void setName(String name)
     {
         this.name = name;
+    }
+
+
+    public long getsTime()
+    {
+        return sTime;
+    }
+
+    public void setsTime(long sTime)
+    {
+        this.sTime = sTime;
+    }
+
+    public long geteTime()
+    {
+        return eTime;
+    }
+
+    public void seteTime(long eTime)
+    {
+        this.eTime = eTime;
     }
 }

@@ -1,7 +1,7 @@
 /**
  * TriviaUtil.java
  * Author: David Walker
- * Revision: 1
+ * Revision: 2
  * Date: 11/10/2015
  * This file is the Utility class of the Trivia Maze
  * currently holds:
@@ -15,6 +15,9 @@ import jdk.management.cmm.SystemResourcePressureMXBean;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class TriviaUtil
@@ -145,6 +148,11 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
             player.setNumItems(Integer.parseInt(save.nextLine()));
             player.setqCorrect(Integer.parseInt(save.nextLine()));
 
+            while(save.hasNextLine())
+            {
+                //load in maze
+            }
+
             System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
         }
     }
@@ -194,7 +202,7 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
                 System.out.println("What would you like to do?");
                 System.out.println("1) Traverse Maze");
                 System.out.println("2) Save Game");
-                System.out.println("3) Quit without saving");
+                System.out.println("3) Quit");
 
                 choice = kb.nextInt();
 
@@ -225,4 +233,20 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
     }
 
 
+    public static void quitGame()
+    {
+        player.seteTime(System.currentTimeMillis());
+        long end = player.geteTime() - player.getsTime();
+
+        long second = (end / 1000) % 60;
+        long minute = (end / (1000 * 60)) % 60;
+        long hour = (end / (1000 * 60 * 60)) % 24;
+
+        String fDate = String.format("%02d:%02d:%02d.%d", hour, minute, second, end);
+
+        System.out.println("");
+        System.out.println(player.getName() + ": ");
+        System.out.println("You answered " + player.getqCorrect() + " questions correct");
+        System.out.println("Your game lasted " + fDate);
+    }
 }

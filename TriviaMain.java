@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * TriviaMain.java
  * Author: David Walker
- * Revision: 0
+ * Revision: 2
  * Date: 10/04/2015
  * This is the main for the Trivia Maze
  */
@@ -33,6 +33,7 @@ public class TriviaMain
             }
             else
             {
+                TriviaUtil.quitGame();
                 //quit
             }
 

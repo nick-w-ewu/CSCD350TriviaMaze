@@ -1,5 +1,8 @@
 //package triviamaze;
 
+import javax.print.attribute.standard.MediaPrintableArea;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -23,7 +26,9 @@ public class Maze
 	private CellType[][] maze;
 	
 	private boolean isEnd;
-	
+
+	public String doorSound = "MetrioidDoor.mp3";
+
 
 	/*
 	 * Calls Eller's algorithm to generate a perfect maze. Then, converts this
@@ -665,5 +670,20 @@ public class Maze
 		
 		return paths;
 	}//end findAllPaths
-	
+
+	public void playSound()
+	{
+		try
+		{
+			//Media door = new Media(doorSound);
+			//MediaPlayer p = new MediaPlayer(door);
+			//p.play();
+			System.out.println("DOOR SOUND");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Door audio file not found");
+		}
+	}
+
 }//end Maze
