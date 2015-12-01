@@ -13,7 +13,7 @@ public class DatabaseTests
 	
 	DatabaseUtility test;
 	DatabaseInsert test1;
-	int id = 20;
+	int id = 30;
 	
 	@Before
 	public void setUp()
@@ -69,6 +69,12 @@ public class DatabaseTests
 		assertEquals("How many children are in Mary Poppins", q3.getQuestion());
 		assertEquals("2", q3.getCorrectAnswer());
 		assertArrayEquals(options, q3.getChoices());
+	}
+	
+	@Test
+	public void testResetFlags()
+	{
+		assertTrue(test.resetAllFlags());
 	}
 
 	
