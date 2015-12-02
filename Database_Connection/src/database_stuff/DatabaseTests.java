@@ -71,11 +71,11 @@ public class DatabaseTests
 		assertArrayEquals(options, q3.getChoices());
 	}
 	
-	@Test
-	public void testResetFlags()
-	{
-		assertTrue(test.resetAllFlags());
-	}
+//	@Test
+//	public void testResetFlags()
+//	{
+//		assertTrue(test.resetAllFlags());
+//	}
 
 	
 }

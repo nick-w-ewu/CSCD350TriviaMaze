@@ -58,7 +58,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static void insertShortAnswer(Scanner input, DatabaseInsert insert)
+	static void insertShortAnswer(Scanner input, DatabaseInsert insert)
 	{
 		String question, answer, keyWords;
 		boolean sucess;
@@ -96,7 +96,7 @@ public class AdminTool
 	 * 
 	 */
 
-	private static String getKeyWords(Scanner input, String answer)
+	static String getKeyWords(Scanner input, String answer)
 	{
 		String keyWords, keyWord = "";
 		
@@ -123,7 +123,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static String getQuestion(Scanner input)
+	static String getQuestion(Scanner input)
 	{
 		String question = input.nextLine();
 		
@@ -145,7 +145,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static void insertTrueFalse(Scanner input, DatabaseInsert insert)
+	static void insertTrueFalse(Scanner input, DatabaseInsert insert)
 	{
 		String pattern = "((?i)[tf])";
 		boolean validInput = false, sucess;
@@ -184,7 +184,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static void insertMultipleChoice(Scanner input, DatabaseInsert insert)
+	static void insertMultipleChoice(Scanner input, DatabaseInsert insert)
 	{
 		String question, option1, option2, option3, option4, correctAnswer;
 		int answer;
@@ -227,7 +227,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static String getCorrectAnswer(String option1, String option2, String option3, String option4, int answer)
+	static String getCorrectAnswer(String option1, String option2, String option3, String option4, int answer)
 	{
 		switch(answer)
 		{
@@ -253,7 +253,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static String getOption(String prompt, Scanner input)
+	static String getOption(String prompt, Scanner input)
 	{
 		String option;
 		
@@ -275,7 +275,7 @@ public class AdminTool
 	 * int - the integer the user entered
 	 */
 
-	private static int displayMenu(Scanner input)
+	static int displayMenu(Scanner input)
 	{
 		int userSelection = 0;
 		
@@ -306,7 +306,7 @@ public class AdminTool
 	 * 
 	 */
 	
-	private static int intInput(Scanner input, String prompt)
+	static int intInput(Scanner input, String prompt)
 	{
 		int ui;
 		while (true)
