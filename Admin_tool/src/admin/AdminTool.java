@@ -63,7 +63,6 @@ public class AdminTool
 		String question, answer, keyWords;
 		boolean sucess;
 		
-		System.out.println("Please enter the question you wish to add to the Triva Maze");
 		question = getQuestion(input);
 		System.out.println("Please enter the answer to this question");
 		answer = input.nextLine();
@@ -99,12 +98,12 @@ public class AdminTool
 
 	private static String getKeyWords(Scanner input, String answer)
 	{
-		String keyWords, keyWord;
+		String keyWords, keyWord = "";
 		
 		System.out.println("Please enter the keywords associated with this question");
 		keyWords = "" + answer;
 		keyWord = input.nextLine();
-		while((keyWord == null || keyWord.equals("")) && !keyWord.equals("]"))
+		while(!keyWord.equals("]") || keyWord.equals(""))
 		{
 			keyWords = keyWords + "," + keyWord;
 			System.out.println("Enter another keyword or type ] if you are finished");
@@ -152,7 +151,6 @@ public class AdminTool
 		boolean validInput = false, sucess;
 		String question, answer;
 		
-		System.out.println("Please enter the question you wish to add to the Triva Maze");
 		question = getQuestion(input);
 		System.out.println("Please enter the answer to this question, t or f");
 		do 
@@ -192,7 +190,6 @@ public class AdminTool
 		int answer;
 		boolean sucess;
 		
-		System.out.println("Please enter the question you wish to add to the Triva Maze");
 		question = getQuestion(input);
 		option1 = getOption("Choice 1", input);
 		option2 = getOption("Choice 2", input);
@@ -285,7 +282,7 @@ public class AdminTool
 		String prompt = "Please select a question type from the list above:";
 		while (!(userSelection == 1 || userSelection == 2 || userSelection == 3 || userSelection == 4))
 		{
-			System.out.println(prompt);
+			System.out.println("Please select a question type from the list below:");
 			System.out.println("1). True False");
 			System.out.println("2). Short Answer");
 			System.out.println("3). Multiple Choice");

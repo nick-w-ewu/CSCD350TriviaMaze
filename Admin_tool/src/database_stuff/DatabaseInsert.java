@@ -54,7 +54,7 @@ public class DatabaseInsert
 	 * Inserts a truefalse question into the database
 	 * Parameters:
 	 * String question - the question to be inserted into the database
-	 * int answer - the answer for the question, should be 1 for true and 0 for false
+	 * String answer - t for true, f for false
 	 * Returns:
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
@@ -91,6 +91,7 @@ public class DatabaseInsert
 	 * Parameters:
 	 * String question - the question to be inserted into the database
 	 * String answer - the answer for the question
+	 * String keywords - the keywords associated with the short answer question
 	 * Returns:
 	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
 	 */
