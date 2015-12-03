@@ -167,42 +167,4 @@ public class DatabaseInsert
 			return false;
 		}
 	}
-
-	/*
-	 * Inserts a hint question into the database
-	 * Parameters:
-	 * int id - the question id which this hint is for
-	 * String type - the type of question the hint is for
-	 * String hint - the hint for the user about this question
-	 * Returns:
-	 * boolean - true if the database update was successful and false if there was an SQLException meaning the update was unsuccessful
-	 */
-
-	public boolean insertHint(int id, String type, String hint)
-	{
-		String sql = "insert into hints values (?, ?, ?);";
-
-		try
-		{
-			this.stmt = conn.prepareStatement(sql);
-
-			stmt.setInt(1, id);
-			stmt.setString(2, type);
-			stmt.setString(3, hint);
-			this.stmt.executeUpdate();
-			this.stmt.close();
-			return true;
-		}
-		catch (SQLException e)
-		{
-			try
-			{
-				this.stmt.close();
-			} 
-			catch (SQLException e1)
-			{
-			}
-			return false;
-		}
-	}
-}
+}//End DatabaseInsert

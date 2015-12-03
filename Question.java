@@ -225,7 +225,7 @@ public abstract class Question
 				System.out.println("Invalid input. Try again.");
 		} while (!validInput);	
 		
-		sc.close();
+		//sc.close();
 		return answer;
 	}//end getValidInput
 

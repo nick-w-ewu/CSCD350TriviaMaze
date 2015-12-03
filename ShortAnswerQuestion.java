@@ -53,7 +53,7 @@ public class ShortAnswerQuestion extends Question
 	public void printQuestion()
 	{		
 		super.printQuestion();
-		System.out.println("\n\nEnter your answer\n");
+		System.out.println("\nEnter your answer:");
 	}//end printQuestion
 	
 	
@@ -70,11 +70,9 @@ public class ShortAnswerQuestion extends Question
 		Scanner sc = new Scanner(System.in);
 		String answer = null;
 	
-		System.out.println("Enter you answer: ");
 		answer = sc.nextLine();
 		answer.trim();
-		sc.close();
-		
+		//sc.close();	
 		return answer;
 	}//end getValidInput
 
@@ -93,7 +91,7 @@ public class ShortAnswerQuestion extends Question
 	public boolean checkCorrectAnswer(String input)
 	{
 		String[] keywords = this.getChoices();
-		
+	
 		for (int i = 0; i < keywords.length; i ++)
 		{
 			String key = keywords[i];

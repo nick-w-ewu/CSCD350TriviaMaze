@@ -54,7 +54,7 @@ public class TrueFalseQuestion extends Question
 	public void printQuestion()
 	{		
 		super.printQuestion();
-		System.out.println("\n\nChoose T or F:\n");
+		System.out.println("\nChoose T or F:");
 	}//end printQuestion
 	
 	

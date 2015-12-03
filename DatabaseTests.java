@@ -6,8 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-//import questions.Question;
-
 public class DatabaseTests
 {
 	
@@ -43,13 +41,6 @@ public class DatabaseTests
 		assertFalse(test1.insertQuestion("What is my name", "3", "Nick", "Fish", null, "Nothing"));
 	}
 	
-	@Test
-	public void testInsertHint()
-	{
-		assertTrue(test1.insertHint(id++, "shortanswer", "its possible"));
-		assertFalse(test1.insertHint(8, null, null));
-	}
-	
 	//Will fail on first run if the database is empty
 	@Test
 	public void testretrieveQuestions()
@@ -57,24 +48,18 @@ public class DatabaseTests
 		Question q1 = test.retrieveQuestion("shortanswer");
 		Question q2 = test.retrieveQuestion("truefalse");
 		Question q3 = test.retrieveQuestion("multiplechoice");
-		String[] choices = {"maybe", "probably"};
-		assertArrayEquals(choices, q1.getChoices());
-		assertEquals("Will it rain today", q1.getQuestion());
-		assertEquals("Maybe, it could", q1.getCorrectAnswer());
-		
-		assertEquals("t", q2.getCorrectAnswer());
-		assertEquals("Will it rain today", q2.getQuestion());
-		
-		String[] options = {"55", "2", "7", "25"};
-		assertEquals("How many children are in Mary Poppins", q3.getQuestion());
-		assertEquals("2", q3.getCorrectAnswer());
-		assertArrayEquals(options, q3.getChoices());
+		assertFalse(q1.getError());
+		assertFalse(q2.getError());
+		assertFalse(q3.getError());
 	}
 	
 	@Test
 	public void testResetFlags()
 	{
-		assertTrue(test.resetAllFlags());
+		assertTrue(test.resetFlags("multiplechoice"));
+		assertTrue(test.resetFlags("shortanswer"));
+		assertTrue(test.resetFlags("truefalse"));
+		assertFalse(test.resetFlags("test"));
 	}
 
 	

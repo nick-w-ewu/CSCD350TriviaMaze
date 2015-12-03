@@ -10,7 +10,6 @@
 package triviamaze;
 import java.sql.*;
 
-//import questions.*;
 
 public class DatabaseUtility
 {
@@ -110,6 +109,7 @@ public class DatabaseUtility
 			} 
 			catch (SQLException e1)
 			{
+				
 			}
 		}
 	}
@@ -241,21 +241,32 @@ public class DatabaseUtility
 	}
 
 	/*
-	 * Sets the answered flag for all the questions in the database to false
+	 * Sets the answered flag for all the questions in the database of the specified type to false
 	 * Returns:
 	 * boolean - true if the update was successful, false if it was not
 	 */
 	
-	public boolean resetAllFlags()
+	public boolean resetFlags(String type)
 	{
-		String sql1 = "update truefalse set answered = 0 where answered = 1;";
-		String sql2 = "update multiplechoice set answered = 0 where answered = 1;";
-		String sql3 = "update shortanswer set answered = 0 where answered = 1;";
+		String sql = "";
+
+		switch(type.toLowerCase())
+		{
+			case("truefalse"):
+				sql = "update truefalse set answered = 0 where answered = 1;";
+				break;
+			case("multiplechoice"):
+				sql = "update multiplechoice set answered = 0 where answered = 1;";
+				break;
+			case("shortanswer"):
+				sql = "update shortanswer set answered = 0 where answered = 1;";
+				break;
+			default:
+				return false;
+		}
 		try
 		{
-			runUpdate(sql1);
-			runUpdate(sql2);
-			runUpdate(sql3);
+			runUpdate(sql);
 			return true;
 		}
 		catch(Exception e)

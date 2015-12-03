@@ -64,7 +64,7 @@ public class MultipleChoiceQuestion extends Question
 			s += letter + ".) " + choices[i] + "\n";
 		}//end for
 		
-		s += "\nEnter you answer (A-D):\n";
+		s += "\nEnter you answer (A-D):";
 		System.out.println(s);
 	}//end printQuestion
 	

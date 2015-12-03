@@ -40,26 +40,26 @@ public class Maze
 		findEntrance();
 		findExit();
 
-		System.out.println("Before Find Path");
-		printMaze(this.maze);
+	//	System.out.println("Before Find Path");
+	//	printMaze(this.maze);
 
 		findPath(this.maze, this.curRow, this.curCol, true);
 
-		System.out.println("BEFORE setting the final maze!");
-		printMaze(this.maze);
+	//	System.out.println("BEFORE setting the final maze!");
+	//	printMaze(this.maze);
 
 		setFinalMaze();
 
-		System.out.println("After setting the final maze!");
-		printMaze(this.maze);
+	//	System.out.println("After setting the final maze!");
+	//	printMaze(this.maze);
 
 		CellType[][] copy = createCopy(this.maze);
 
-		System.out.println("curRow = " + this.curRow + "  curCol = " + this.curCol);
+	//	System.out.println("curRow = " + this.curRow + "  curCol = " + this.curCol);
 		copy[this.curRow][this.curCol] = CellType.START;
 
-		System.out.println("Total number of possible paths to the end: " + findAllPaths(copy, this.curRow, curCol));
-		printMaze(this.maze);
+	//	System.out.println("Total number of possible paths to the end: " + findAllPaths(copy, this.curRow, curCol));
+	//	printMaze(this.maze);
 	}//Maze
 	
 	
@@ -419,7 +419,7 @@ public class Maze
 		CellType[][] mazeCopy = createCopy(this.maze);
 		mazeCopy[this.curRow][this.curCol] = CellType.START;
 
-		System.out.println("Number of possible paths to the end: " + findAllPaths(mazeCopy, this.curRow, this.curCol));
+	//	System.out.println("Number of possible paths to the end: " + findAllPaths(mazeCopy, this.curRow, this.curCol));
 		
 		mazeCopy = createCopy(this.maze);
 		mazeCopy[this.curRow][this.curCol] = CellType.START;
