@@ -22,8 +22,8 @@ public class Maze
 	static final double PROB_OPEN = 0.5;
 	static final double PROB_QUESTION = 0.65;
 
-	private int curRow;
-	private int curCol;
+	private static int curRow;
+	private static int curCol;
 	private int prevRow;
 	private int prevCol;
 
@@ -105,10 +105,10 @@ public class Maze
 	 * int j - Ths new column index
 	 */
 	
-	private void setPosition(int i, int j)
+	private static void setPosition(int i, int j)
 	{
-		this.curRow = i;
-		this.curCol = j;
+		curRow = i;
+		curCol = j;
 	}//end setPosition
 
 	
@@ -289,6 +289,11 @@ public class Maze
 	{
 		if (maze[i][j] == CellType.WALL)
 			return false;
+		if(maze[i][j] == CellType.MCQUESTION || maze[i][j] == CellType.TFQUESTION || maze[i][j] == CellType.SAQUESTION)
+		{
+			//answer question in order to move
+
+		}
 		return true;
 	}//end canMove
 	
@@ -307,7 +312,7 @@ public class Maze
 		char ch = 'N';
 
 		do {
-			System.out.print("Enter the direction you wish to move (N, E, S, W), V to view your party, or Q to quit): ");
+			System.out.print("Enter the direction you wish to move (N, E, S, W), V to view your party, or Q to go back to the Main Menu): ");
 			choice = sc.next();
 			choice.trim();
 
@@ -320,8 +325,8 @@ public class Maze
 					validInput = true;
 					if (ch == 'Q')
 					{
-						System.out.println("\nQuitting the current game...\n");
-						this.isEnd = true;
+						System.out.println("\nBack to Main Menu...\n");
+						//this.isEnd = true;
 					}//end if
 				}//end if
 				else
@@ -375,6 +380,7 @@ public class Maze
 			if (canMove(i, j - 1))
 				j -= 1;
 		}//end else if
+
 		if (i == this.curRow && j == this.curCol) 
 		{
 			System.out.println("This is an invalid move. Please select another option.");
@@ -717,9 +723,10 @@ public class Maze
 		{
 			c =  CellType.BLANK;
 		}
-		else if(cell.equals("P"))
+		else if(cell.equals("S")) //formerly P
 		{
 			c =  CellType.PLAYER;
+			setPosition(i, j);
 		}
 		else if(cell.equals(" "))
 		{

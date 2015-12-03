@@ -160,9 +160,10 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
                 for(int y = 0; y < c; y++)
                 {
                     String cell = save.nextLine();
-                    System.out.println("cell " + cell);
+                    System.out.print(cell + " ");
                     Maze.loadMaze(maze.getMaze(), x, y, cell);
                 }
+                System.out.println("");
             }
 
             System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
