@@ -242,7 +242,7 @@ public class DatabaseUtility
 	}
 
 	/*
-	 * Sets the answered flag for all the questions in the database to false
+	 * Sets the answered flag for all the questions in the database of the specified type to false
 	 * Returns:
 	 * boolean - true if the update was successful, false if it was not
 	 */
@@ -262,6 +262,8 @@ public class DatabaseUtility
 			case("shortanswer"):
 				sql = "update shortanswer set answered = 0 where answered = 1;";
 				break;
+			default:
+				return false;
 		}
 		try
 		{
