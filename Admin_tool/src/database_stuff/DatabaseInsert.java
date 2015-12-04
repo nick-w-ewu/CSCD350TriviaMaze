@@ -43,12 +43,12 @@ public class DatabaseInsert
 			conn = DriverManager.getConnection("jdbc:sqlite:questions2.db");
 
 			return true;
-		}
+		}//end try
 		catch (Exception e)
 		{
 			return false;
-		}
-	}
+		}//end catch
+	}//end connectDatabase
 
 	/*
 	 * Inserts a truefalse question into the database
@@ -72,19 +72,19 @@ public class DatabaseInsert
 			this.stmt.executeUpdate();
 			this.stmt.close();
 			return true;
-		}
+		}//end try
 		catch (SQLException e)
 		{
 			try
 			{
 				this.stmt.close();
-			} 
+			} //end try
 			catch (SQLException e1)
 			{
-			}
+			}//end catch
 			return false;
-		}
-	}
+		}//end catch
+	}//end insertQuestion
 
 	/*
 	 * Inserts a shortanswer question into the database
@@ -110,19 +110,19 @@ public class DatabaseInsert
 			this.stmt.executeUpdate();
 			this.stmt.close();
 			return true;
-		}
+		}//end try
 		catch (SQLException e)
 		{
 			try
 			{
 				this.stmt.close();
-			} 
+			} //end try
 			catch (SQLException e1)
 			{
-			}
+			}//end catch
 			return false;
-		}
-	}
+		}//end catch
+	}//end insertQuestion
 
 	/*
 	 * Inserts a multiplechoice question into the database
@@ -154,17 +154,17 @@ public class DatabaseInsert
 			this.stmt.executeUpdate();
 			this.stmt.close();
 			return true;
-		}
+		}//end try
 		catch (SQLException e)
 		{
 			try
 			{
 				this.stmt.close();
-			} 
+			} //end try
 			catch (SQLException e1)
 			{
-			}
+			}//end catch
 			return false;
-		}
-	}
+		}//end catch
+	}//end insertQuestion
 }

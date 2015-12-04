@@ -42,11 +42,11 @@ public class AdminTool
 				case 3:
 					insertMultipleChoice(input, insert);
 					break;
-			}
+			}//end switch
 			userSelection = displayMenu(input);
-		}
+		}//end while
 		System.out.println("Thank You for using the Triva Maze Admin Tool, we are not exiting...");
-	}
+	}//end main
 
 	/*
 	 * Accepts user input for a short answer question and parses it to make sure it is correct
@@ -70,18 +70,18 @@ public class AdminTool
 		{
 			System.out.println("Please enter the answer to this question");
 			answer = input.nextLine();
-		}
+		}//end while
 		keyWords = getKeyWords(input, answer);
 		sucess = insert.insertQuestion(question, answer, keyWords);
 		if(sucess)
 		{
 			System.out.println("Question sucessfully inserted into Triva Maze");
-		}
+		}//end if
 		else
 		{
 			System.out.println("There was an error inserting the question into the Triva Maze");
-		}
-	}
+		}//end else
+	}//end insertShortAnswer
 	
 	/*
 	 * Prompts the user to enter the keywords for a the short answer question until they enter ],
@@ -108,9 +108,9 @@ public class AdminTool
 			keyWords = keyWords + "," + keyWord;
 			System.out.println("Enter another keyword or type ] if you are finished");
 			keyWord = input.nextLine();
-		}
+		}//end while
 		return keyWords;
-	}
+	}//end getKeyWords
 
 	/*
 	 * Prompts the user to enter the question they wish to enter into the game,
@@ -131,9 +131,9 @@ public class AdminTool
 		{
 			System.out.println("Please enter the question you wish to add to the Triva Maze, it cannot be blank");
 			question = input.nextLine();
-		}
+		}//end while
 		return question;
-	}
+	}//end getQuestion
 
 	/*
 	 * Accepts user input for a true false question and parses it to make sure it is correct
@@ -167,12 +167,12 @@ public class AdminTool
 		if(sucess)
 		{
 			System.out.println("Question sucessfully inserted into Triva Maze");
-		}
+		}//end if
 		else
 		{
 			System.out.println("There was an error inserting the question into the Triva Maze");
-		}
-	}
+		}//end else
+	}//end insertTrueFalse
 	
 	/*
 	 * Accepts user input for a multiple choice question and parses it to make sure it is correct
@@ -200,18 +200,18 @@ public class AdminTool
 		while(answer > 4)
 		{
 			answer = intInput(input, "Please enter the choice which is the correct answer for this question");
-		}
+		}//end while
 		correctAnswer = getCorrectAnswer(option1, option2, option3, option4, answer);
 		sucess = insert.insertQuestion(question, correctAnswer, option1, option2, option3, option4);
 		if(sucess)
 		{
 			System.out.println("Question sucessfully inserted into Triva Maze");
-		}
+		}//end if
 		else
 		{
 			System.out.println("There was an error inserting the question into the Triva Maze");
-		}
-	}
+		}//end else
+	}//end insertMultipleChoice
 	
 	/*
 	 * Given the number of the option which is the correct answer to a multiple choice question
@@ -237,9 +237,9 @@ public class AdminTool
 				return option2;
 			case 3:
 				return option3;
-		}
+		}//end Switch
 		return option4;
-	}
+	}//end getCorrectAnswer
 
 	/*
 	 * Prompts the user to enter the possible answer for the specified choice in a multiple choice,
@@ -263,9 +263,9 @@ public class AdminTool
 		{
 			System.out.println("Please enter the possible answer for " + prompt + " of this question, it cannot be blank");
 			option = input.nextLine();
-		}
+		}//end while
 		return option;
-	}
+	}//end getOption
 
 	/*
 	 * Displays the menu until the user has entered a valid menu choice
@@ -292,10 +292,10 @@ public class AdminTool
 			if (!(userSelection == 1 || userSelection == 2 || userSelection == 3 || userSelection == 4))
 			{
 				System.out.println("That is not a valid choice for inserting a question, please try again.\n");
-			}
-		}
+			}//end if
+		}//end while
 		return userSelection;
-	}
+	}//end displayMenu
 	
 	/*
 	 * Prompts the user to enter an integer that is greater then zero, the user is prompted
@@ -321,12 +321,12 @@ public class AdminTool
 					throw new InputMismatchException();
 				}
 				return ui;
-			}
+			}//end try
 			catch (Exception e)
 			{
 				System.out.println("There was an error with the input please try again.");
 				input.nextLine();
-			}
-		}
-	}
+			}//end catch
+		}//end while
+	}//end intInput
 }//End AdminTool
