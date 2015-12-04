@@ -2,9 +2,9 @@
 
 public class MazeQuestionTester {
 
-//	public MazeQuestionTester() {
-//		// TODO Auto-generated constructor stub
-//	}
+	public MazeQuestionTester() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public static void main(String [] args)
 	{

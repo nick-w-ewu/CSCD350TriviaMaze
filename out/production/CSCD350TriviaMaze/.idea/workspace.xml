@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TriviaMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TriviaMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TriviaMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.35185185">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -37,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="244" column="32" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
+              <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="method#loadSaveMenu#0;class#TriviaUtil#0" expanded="false" />
@@ -50,8 +50,8 @@
       <file leaf-file-name="Maze.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Maze.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-31.74074">
-              <caret line="656" column="28" selection-start-line="656" selection-start-column="28" selection-end-line="656" selection-end-column="28" />
+            <state vertical-scroll-proportion="-26.11111">
+              <caret line="339" column="17" selection-start-line="339" selection-start-column="17" selection-end-line="339" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Maze#0;class#Maze#0" expanded="false" />
@@ -79,21 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrueFalseQuestion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrueFalseQuestion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DatabaseUtility.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DatabaseUtility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-166.22223">
-              <caret line="267" column="24" selection-start-line="267" selection-start-column="24" selection-end-line="267" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
               <folding>
                 <element signature="e#0#8283#0" expanded="true" />
                 <marker date="1449198488763" expanded="true" signature="1699:1767" placeholder="select * fro..truefalse..." />
@@ -107,41 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MazeTester.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MazeTester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MazeQuestionTester.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MazeQuestionTester.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MazeQuestionTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="triviaquestions.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/triviaquestions.txt">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShortAnswerQuestion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShortAnswerQuestion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+              <caret line="39" column="49" selection-start-line="18" selection-start-column="8" selection-end-line="39" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -165,8 +125,6 @@
         <option value="$PROJECT_DIR$/Ellers.java" />
         <option value="$PROJECT_DIR$/saved.ser" />
         <option value="$PROJECT_DIR$/Player.java" />
-        <option value="$PROJECT_DIR$/TriviaUtil.java" />
-        <option value="$PROJECT_DIR$/MazeQuestionTester.java" />
         <option value="$PROJECT_DIR$/AllTests.java" />
         <option value="$PROJECT_DIR$/DatabaseInsert.java" />
         <option value="$PROJECT_DIR$/DatabaseTests.java" />
@@ -180,11 +138,14 @@
         <option value="$PROJECT_DIR$/QuestionTester.java" />
         <option value="$PROJECT_DIR$/ShortAnswerQuestion.java" />
         <option value="$PROJECT_DIR$/ShortAnswerQuestionTest.java" />
-        <option value="$PROJECT_DIR$/TriviaMain.java" />
         <option value="$PROJECT_DIR$/TrueFalseQuestion.java" />
         <option value="$PROJECT_DIR$/TrueFalseQuestionTest.java" />
-        <option value="$PROJECT_DIR$/Maze.java" />
         <option value="$PROJECT_DIR$/DatabaseUtility.java" />
+        <option value="$PROJECT_DIR$/Admin_tool/src/database_stuff/DatabaseTests.java" />
+        <option value="$PROJECT_DIR$/MazeQuestionTester.java" />
+        <option value="$PROJECT_DIR$/Maze.java" />
+        <option value="$PROJECT_DIR$/TriviaUtil.java" />
+        <option value="$PROJECT_DIR$/TriviaMain.java" />
       </list>
     </option>
   </component>
@@ -224,6 +185,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -244,16 +208,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sqlite-jdbc-3.8.11.2.jar!/" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="settings.editor.splitter.proportion" value="0.18808778" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -278,6 +239,21 @@
     <configuration default="false" name="MazeTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="MazeTester" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CSCD350TriviaMaze" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MazeQuestionTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="MazeQuestionTester" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -715,14 +691,16 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.TriviaMain" />
       <item index="1" class="java.lang.String" itemvalue="Application.MazeTester" />
+      <item index="2" class="java.lang.String" itemvalue="Application.MazeQuestionTester" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.TriviaMain" />
-        <item index="1" class="java.lang.String" itemvalue="Application.MazeTester" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MazeQuestionTester" />
+        <item index="2" class="java.lang.String" itemvalue="Application.MazeTester" />
       </list>
     </recent_temporary>
   </component>
@@ -745,12 +723,13 @@
       <workItem from="1448942664188" duration="5551000" />
       <workItem from="1448948845654" duration="218000" />
       <workItem from="1449106958078" duration="4520000" />
-      <workItem from="1449197332834" duration="1779000" />
+      <workItem from="1449197332834" duration="2610000" />
+      <workItem from="1449263632587" duration="2972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35703000" />
+    <option name="totallyTimeSpent" value="39506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -758,6 +737,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -767,18 +747,17 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -803,6 +782,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/DatabaseUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#8283#0" expanded="true" />
+            <marker date="1449198488763" expanded="true" signature="1699:1767" placeholder="select * fro..truefalse..." />
+            <marker date="1449198488763" expanded="true" signature="1829:1902" placeholder="select * fro..multiplechoice..." />
+            <marker date="1449198488763" expanded="true" signature="1961:2031" placeholder="select * fro..shortanswer..." />
+            <marker date="1449198488763" expanded="true" signature="6620:6675" placeholder="update truef..." />
+            <marker date="1449198488763" expanded="true" signature="6737:6797" placeholder="update multi..." />
+            <marker date="1449198488763" expanded="true" signature="6856:6913" placeholder="update short..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MazeQuestionTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TriviaMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1252,14 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QuestionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QuestionTester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1276,31 +1271,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/triviaquestions.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="244" column="32" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#loadSaveMenu#0;class#TriviaUtil#0" expanded="false" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1312,10 +1286,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Admin_tool/src/database_stuff/DatabaseInsert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QuestionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MazeTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DatabaseUtility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#8283#0" expanded="true" />
+            <marker date="1449198488763" expanded="true" signature="1699:1767" placeholder="select * fro..truefalse..." />
+            <marker date="1449198488763" expanded="true" signature="1829:1902" placeholder="select * fro..multiplechoice..." />
+            <marker date="1449198488763" expanded="true" signature="1961:2031" placeholder="select * fro..shortanswer..." />
+            <marker date="1449198488763" expanded="true" signature="6620:6675" placeholder="update truef..." />
+            <marker date="1449198488763" expanded="true" signature="6737:6797" placeholder="update multi..." />
+            <marker date="1449198488763" expanded="true" signature="6856:6913" placeholder="update short..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MazeQuestionTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="49" selection-start-line="18" selection-start-column="8" selection-end-line="39" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Maze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.74074">
-          <caret line="656" column="28" selection-start-line="656" selection-start-column="28" selection-end-line="656" selection-end-column="28" />
+        <state vertical-scroll-proportion="-26.11111">
+          <caret line="339" column="17" selection-start-line="339" selection-start-column="17" selection-end-line="339" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Maze#0;class#Maze#0" expanded="false" />
@@ -1342,34 +1363,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseUtility.java">
+    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-166.22223">
-          <caret line="267" column="24" selection-start-line="267" selection-start-column="24" selection-end-line="267" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
           <folding>
-            <element signature="e#0#8283#0" expanded="true" />
-            <marker date="1449198488763" expanded="true" signature="1699:1767" placeholder="select * fro..truefalse..." />
-            <marker date="1449198488763" expanded="true" signature="1829:1902" placeholder="select * fro..multiplechoice..." />
-            <marker date="1449198488763" expanded="true" signature="1961:2031" placeholder="select * fro..shortanswer..." />
-            <marker date="1449198488763" expanded="true" signature="6620:6675" placeholder="update truef..." />
-            <marker date="1449198488763" expanded="true" signature="6737:6797" placeholder="update multi..." />
-            <marker date="1449198488763" expanded="true" signature="6856:6913" placeholder="update short..." />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#loadSaveMenu#0;class#TriviaUtil#0" expanded="false" />
+            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MazeTester.java">
+    <entry file="file://$PROJECT_DIR$/TriviaMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MazeQuestionTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.35185185">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1431,7 +1440,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1451,6 +1459,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>sqlite-jdbc-3.8.11.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

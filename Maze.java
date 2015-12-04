@@ -289,11 +289,6 @@ public class Maze
 	{
 		if (maze[i][j] == CellType.WALL)
 			return false;
-		if(maze[i][j] == CellType.MCQUESTION || maze[i][j] == CellType.TFQUESTION || maze[i][j] == CellType.SAQUESTION)
-		{
-			//answer question in order to move
-
-		}
 		return true;
 	}//end canMove
 	
@@ -304,7 +299,7 @@ public class Maze
 	 * enters a valid direction.
 	 */
 	
-	public void getDirection() 
+	public int getDirection()
 	{
 		Scanner sc = new Scanner(System.in);
 		boolean validInput = false;
@@ -326,6 +321,7 @@ public class Maze
 					if (ch == 'Q')
 					{
 						System.out.println("\nBack to Main Menu...\n");
+						return -1;
 						//this.isEnd = true;
 					}//end if
 				}//end if
@@ -341,6 +337,7 @@ public class Maze
 		if (ch != 'Q')
 			verifyDirection(ch);		
 	//	sc.close();
+		return 1;
 	}//end getDirection
 
 	
