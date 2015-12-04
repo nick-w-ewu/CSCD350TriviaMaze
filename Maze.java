@@ -626,7 +626,35 @@ public class Maze
 		}//end if
 		return validPath;
 	}//end findPath
-    
+
+
+	/*
+	 * Find the type of question to obtain depending on the value
+	 * at the given position.
+	 * This method is to be called if getLandOnQuestion returns true;
+	 * Returns:
+	 * String - A String indicator for the type of question
+	 */
+
+	public String getQuestionType()
+	{
+		CellType ques = this.maze[this.curRow][this.curCol];
+		if (ques == CellType.TFQUESTION)
+			return "truefalse";
+		else if (ques == CellType.MCQUESTION)
+			return "multiplechoice";
+		else if (ques == CellType.SAQUESTION)
+			return "shortanswer";
+		else
+			return "error";
+	}//end getQuestionType
+
+	public boolean getLandOnQuestion()
+	{
+		return  (this.maze[this.curRow][this.curCol] == CellType.TFQUESTION ||
+				this.maze[this.curRow][this.curCol] == CellType.MCQUESTION ||
+				this.maze[this.curRow][this.curCol] == CellType.SAQUESTION);
+	}//end getLandOnQuestion
     
     /*
      * Counts all possible paths from the cell in row i and column j to the position marked 
