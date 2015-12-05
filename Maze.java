@@ -22,8 +22,8 @@ public class Maze
 	static final double PROB_OPEN = 0.5;
 	static final double PROB_QUESTION = 0.65;
 
-	private static int curRow;
-	private static int curCol;
+	private int curRow;
+	private int curCol;
 	private int prevRow;
 	private int prevCol;
 
@@ -105,10 +105,10 @@ public class Maze
 	 * int j - Ths new column index
 	 */
 	
-	private static void setPosition(int i, int j)
+	public void setPosition(int i, int j)
 	{
-		curRow = i;
-		curCol = j;
+		this.curRow = i;
+		this.curCol = j;
 	}//end setPosition
 
 	
@@ -707,75 +707,6 @@ public class Maze
 			System.out.println("Door audio file not found");
 		}
 	}
-
-	public static void loadMaze(CellType[][] maze, int i, int j, String cell)
-	{
-		CellType c;
-
-		if(cell.equals("S"))
-		{
-			c = CellType.START;
-		}
-		else if(cell.equals("G"))
-		{
-			c =  CellType.END;
-		}
-		else if(cell.equals("O"))
-		{
-			c =  CellType.OPEN;
-		}
-		else if(cell.equals("W"))
-		{
-			c =  CellType.WALL;
-		}
-		else if(cell.equals("?"))
-		{
-			c =  CellType.QUESTION;
-		}
-		else if(cell.equals("V"))
-		{
-			c =  CellType.VISITED;
-		}
-		else if(cell.equals("."))
-		{
-			c =  CellType.SUCCESS;
-		}
-		else if(cell.equals("#"))
-		{
-			c = CellType.BEEN_HERE;
-		}
-		else if(cell.equals("_"))
-		{
-			c =  CellType.BLANK;
-		}
-		else if(cell.equals("S")) //formerly P
-		{
-			c =  CellType.PLAYER;
-			setPosition(i, j);
-		}
-		else if(cell.equals(" "))
-		{
-			c =  CellType.EMPTY;
-		}
-		else if(cell.equals("1"))
-		{
-			c =  CellType.TFQUESTION;
-		}
-		else if(cell.equals("2"))
-		{
-			c =  CellType.MCQUESTION;
-		}
-		else if(cell.equals("3"))
-		{
-			c =  CellType.SAQUESTION;
-		}
-		else
-		{
-			c = CellType.BLANK;
-		}
-
-		maze[i][j] = c;
-	}//end setPosition
 
 	public int getNumRows()
 	{

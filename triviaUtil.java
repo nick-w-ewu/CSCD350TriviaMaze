@@ -25,6 +25,8 @@ public class TriviaUtil
     private static Scanner kb = new Scanner(System.in);
     private static Maze maze;
     private static Player player;
+    private static DatabaseUtility db = new DatabaseUtility();
+    private static QuestionHandler qh = new QuestionHandler();
 
     /*
     loadSaveMenu function
@@ -161,7 +163,7 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
                 {
                     String cell = save.nextLine();
                     System.out.print(cell + " ");
-                    Maze.loadMaze(maze.getMaze(), x, y, cell);
+                    loadMaze(maze.getMaze(), x, y, cell);
                 }
                 System.out.println("");
             }
@@ -241,8 +243,34 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
 
     public static void traverseMaze()
     {
+        Question question;
+        boolean isQuestionCell = false;
+        int checkQuit;
+        String questionType = "";
+
+       do
+       {
             maze.print();
-            maze.getDirection();
+            checkQuit = maze.getDirection();
+            isQuestionCell = maze.getLandOnQuestion();
+
+            if(isQuestionCell && checkQuit != -1)
+            {
+                questionType = maze.getQuestionType();
+                try
+                {
+                    question = qh.checkFlagsReset(questionType, db);
+                    qh.handleQuestion(question, maze); //also updates the maze
+                }
+                catch (Exception ex)
+                {
+                    ex.printStackTrace();
+                }
+            }//end if
+
+        } while(maze.pathExists() && !maze.getIsEnd() && checkQuit != -1);
+        
+            
     }
 
 
@@ -262,4 +290,74 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
         System.out.println("You answered " + player.getqCorrect() + " questions correct");
         System.out.println("Your game lasted " + fDate);
     }
+
+    public static void loadMaze(CellType[][] m, int i, int j, String cell)
+    {
+        CellType c;
+
+        if(cell.equals("S"))
+        {
+            c = CellType.START;
+        }
+        else if(cell.equals("G"))
+        {
+            c =  CellType.END;
+        }
+        else if(cell.equals("O"))
+        {
+            c =  CellType.OPEN;
+        }
+        else if(cell.equals("W"))
+        {
+            c =  CellType.WALL;
+        }
+        else if(cell.equals("?"))
+        {
+            c =  CellType.QUESTION;
+        }
+        else if(cell.equals("V"))
+        {
+            c =  CellType.VISITED;
+        }
+        else if(cell.equals("."))
+        {
+            c =  CellType.SUCCESS;
+        }
+        else if(cell.equals("#"))
+        {
+            c = CellType.BEEN_HERE;
+        }
+        else if(cell.equals("_"))
+        {
+            c =  CellType.BLANK;
+        }
+        else if(cell.equals("P")) //formerly P
+        {
+            c =  CellType.PLAYER;
+            maze.setPosition(i, j);
+        }
+        else if(cell.equals(" "))
+        {
+            c =  CellType.EMPTY;
+        }
+        else if(cell.equals("1"))
+        {
+            c =  CellType.TFQUESTION;
+        }
+        else if(cell.equals("2"))
+        {
+            c =  CellType.MCQUESTION;
+        }
+        else if(cell.equals("3"))
+        {
+            c =  CellType.SAQUESTION;
+        }
+        else
+        {
+            c = CellType.BLANK;
+        }
+
+        m[i][j] = c;
+    }//end setPosition
+
 }
