@@ -36,8 +36,8 @@ public class TriviaUtil
         boolean goodInput;
 
         do {
-            //try
-           // {
+            try
+            {
                 System.out.println("What would you like to do?");
                 System.out.println("1) Load saved game");
                 System.out.println("2) Start a new game");
@@ -60,13 +60,13 @@ public class TriviaUtil
                         createNewGame();
                     }
                 }
-           // }
-           // catch (Exception e)
-           // {
-           //     System.out.println("Input is not valid, try again");
-           //     goodInput = false;
-           //     String clear = kb.nextLine();
-           // }
+            }
+            catch (Exception e)
+            {
+                System.out.println("Input is not valid, try again");
+                goodInput = false;
+                String clear = kb.nextLine();
+            }
         } while(!goodInput);
     }
 
@@ -115,11 +115,13 @@ public class TriviaUtil
     {
         PrintWriter save = new PrintWriter(s);
 
-        System.out.println(" saving: " + player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
+       // System.out.println(" saving: " + player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
 
         save.println(player.getName());
         save.println(player.getNumItems());
         save.println(player.getqCorrect());
+        save.println(maze.getCurRow());
+        save.println(maze.getCurCol());
         maze.printMaze(save); //save maze so it can be loaded
         save.close();
     }
@@ -171,13 +173,21 @@ public class TriviaUtil
         int r = 9;
         int c = 9;
 
-        System.out.println(" r + c " + r + " " + c);
+        //System.out.println(" r + c " + r + " " + c);
 
         if(save.hasNext())
         {
             player.setName(save.nextLine());
             player.setNumItems(Integer.parseInt(save.nextLine()));
             player.setqCorrect(Integer.parseInt(save.nextLine()));
+
+            int row, col;
+            row = Integer.parseInt(save.nextLine());
+            col = Integer.parseInt(save.nextLine());
+            //System.out.println(" row col " + row + " " + col);
+            maze.setPosition(row, col);
+            maze.setCurCol(col);
+            maze.setCurRow(row);
 
             for(int x = 0; x < r; x++)
             {
@@ -359,6 +369,7 @@ public class TriviaUtil
 
         if(cell.equals("S"))
         {
+            System.out.println("S pos: " + i + " " + j);
             c = CellType.START;
         }
         else if(cell.equals("G"))

@@ -689,41 +689,6 @@ public class Maze
 		return paths;
 	}//end findAllPaths
 
-	public void playSound()
-	{
-		try
-		{
-			//Media door = new Media(doorSound);
-			//MediaPlayer p = new MediaPlayer(door);
-			//p.play();
-			System.out.println("DOOR SOUND");
-		}
-		catch (Exception e)
-		{
-			System.out.println("Door audio file not found");
-		}
-	}
-
-	public int getNumRows()
-	{
-		return numRows;
-	}
-
-	public void setNumRows(int numRows)
-	{
-		this.numRows = numRows;
-	}
-
-	public int getNumCols()
-	{
-		return numCols;
-	}
-
-	public void setNumCols(int numCols)
-	{
-		this.numCols = numCols;
-	}
-
 	/*
 * Overridden to accept PrintWriter for writing/file saving
 * Parameter:
@@ -739,4 +704,25 @@ public class Maze
 			}//end for
 		}//end for
 	}//end printMaze
+
+	public int getCurRow()
+	{
+		return curRow;
+	}
+
+	public void setCurRow(int curRow)
+	{
+		this.curRow = curRow;
+	}
+
+	public int getCurCol()
+	{
+		return curCol;
+	}
+
+	public void setCurCol(int curCol)
+	{
+		this.curCol = curCol;
+	}
+
 }//end Maze

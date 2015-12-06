@@ -23,55 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TriviaMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TriviaMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TriviaMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22222222">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="104" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TriviaUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TriviaUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="164" column="20" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.537037">
+              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Maze.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Maze.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#findEntrance#0;class#Maze#0" expanded="false" />
-                <element signature="method#findExit#0;class#Maze#0" expanded="false" />
-                <element signature="method#print#0;class#Maze#0" expanded="false" />
-                <element signature="method#printMaze#0;class#Maze#0" expanded="false" />
-                <element signature="method#createCopy#0;class#Maze#0" expanded="false" />
-                <element signature="method#reachEnd#0;class#Maze#0" expanded="false" />
-                <element signature="method#verifyDirection#0;class#Maze#0" expanded="false" />
-                <element signature="method#postUpdate#0;class#Maze#0" expanded="false" />
-                <element signature="method#pathExists#0;class#Maze#0" expanded="false" />
-                <element signature="method#breakWall#0;class#Maze#0" expanded="false" />
-                <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
-                <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
-                <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-                <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
-                <element signature="method#findPath#0;class#Maze#0" expanded="false" />
-                <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
-                <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
-                <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-                <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,7 +60,6 @@
       <list>
         <option value="$PROJECT_DIR$/triviaUtil.java" />
         <option value="$PROJECT_DIR$/CellType.java" />
-        <option value="$PROJECT_DIR$/saved.ser" />
         <option value="$PROJECT_DIR$/Player.java" />
         <option value="$PROJECT_DIR$/AllTests.java" />
         <option value="$PROJECT_DIR$/DatabaseInsert.java" />
@@ -103,7 +70,6 @@
         <option value="$PROJECT_DIR$/MultipleChoiceQuestionTest.java" />
         <option value="$PROJECT_DIR$/Question.java" />
         <option value="$PROJECT_DIR$/QuestionFactory.java" />
-        <option value="$PROJECT_DIR$/QuestionHandler.java" />
         <option value="$PROJECT_DIR$/QuestionTester.java" />
         <option value="$PROJECT_DIR$/ShortAnswerQuestion.java" />
         <option value="$PROJECT_DIR$/ShortAnswerQuestionTest.java" />
@@ -112,9 +78,11 @@
         <option value="$PROJECT_DIR$/DatabaseUtility.java" />
         <option value="$PROJECT_DIR$/Admin_tool/src/database_stuff/DatabaseTests.java" />
         <option value="$PROJECT_DIR$/MazeQuestionTester.java" />
-        <option value="$PROJECT_DIR$/TriviaMain.java" />
         <option value="$PROJECT_DIR$/Ellers.java" />
+        <option value="$PROJECT_DIR$/QuestionHandler.java" />
         <option value="$PROJECT_DIR$/Maze.java" />
+        <option value="$PROJECT_DIR$/saved.ser" />
+        <option value="$PROJECT_DIR$/TriviaMain.java" />
         <option value="$PROJECT_DIR$/TriviaUtil.java" />
       </list>
     </option>
@@ -155,8 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -178,6 +144,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -695,12 +663,13 @@
       <workItem from="1449106958078" duration="4520000" />
       <workItem from="1449197332834" duration="2610000" />
       <workItem from="1449263632587" duration="8261000" />
-      <workItem from="1449380541541" duration="800000" />
+      <workItem from="1449380541541" duration="4467000" />
+      <workItem from="1449429007656" duration="125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45595000" />
+    <option name="totallyTimeSpent" value="49387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -709,13 +678,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5697674" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -791,7 +760,6 @@
           <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -815,12 +783,10 @@
             <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
             <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
             <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-            <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
             <element signature="method#findPath#0;class#Maze#0" expanded="false" />
             <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
             <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
             <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-            <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -859,7 +825,6 @@
           <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,12 +848,10 @@
             <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
             <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
             <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-            <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
             <element signature="method#findPath#0;class#Maze#0" expanded="false" />
             <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
             <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
             <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-            <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -917,7 +880,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -941,12 +903,10 @@
             <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
             <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
             <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-            <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
             <element signature="method#findPath#0;class#Maze#0" expanded="false" />
             <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
             <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
             <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-            <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -975,7 +935,6 @@
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1007,12 +966,10 @@
             <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
             <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
             <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-            <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
             <element signature="method#findPath#0;class#Maze#0" expanded="false" />
             <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
             <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
             <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-            <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1041,7 +998,6 @@
           <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1073,12 +1029,10 @@
             <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
             <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
             <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-            <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
             <element signature="method#findPath#0;class#Maze#0" expanded="false" />
             <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
             <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
             <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-            <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1107,7 +1061,6 @@
           <caret line="130" column="107" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="107" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1125,13 +1078,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saved.ser">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4934037">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1235,14 +1181,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QuestionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MazeTester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1293,10 +1231,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Maze.java">
+    <entry file="file://$PROJECT_DIR$/saved.ser">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TriviaMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="104" selection-start-line="10" selection-start-column="104" selection-end-line="10" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Maze.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.703703">
+          <caret line="738" column="22" selection-start-line="738" selection-start-column="22" selection-end-line="738" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#findEntrance#0;class#Maze#0" expanded="false" />
@@ -1312,32 +1265,29 @@
             <element signature="method#makeNonPerfect#0;class#Maze#0" expanded="false" />
             <element signature="method#chooseQuestionSpaces#0;class#Maze#0" expanded="false" />
             <element signature="method#setFinalMaze#0;class#Maze#0" expanded="false" />
-            <element signature="method#isValidMove2#0;class#Maze#0" expanded="false" />
             <element signature="method#findPath#0;class#Maze#0" expanded="false" />
             <element signature="method#getQuestionType#0;class#Maze#0" expanded="false" />
             <element signature="method#findAllPaths#0;class#Maze#0" expanded="false" />
             <element signature="method#playSound#0;class#Maze#0" expanded="false" />
-            <element signature="method#printMaze#1;class#Maze#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QuestionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7631874">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="79" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="20" selection-start-line="164" selection-start-column="20" selection-end-line="164" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.537037">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="method#difficultyMenu#0;class#TriviaUtil#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22222222">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
