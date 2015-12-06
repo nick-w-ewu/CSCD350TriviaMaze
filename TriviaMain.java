@@ -8,6 +8,7 @@ import java.util.Scanner;
  * Revision: 3
  * Date: 10/04/2015
  * This is the main for the Trivia Maze
+ * it handles all the highest level functions of the game, calling the TriviaUtil Class for each feature
  */
 
 public class TriviaMain

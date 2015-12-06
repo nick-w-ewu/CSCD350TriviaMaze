@@ -1,8 +1,6 @@
 //package triviamaze;
 
-import javax.print.attribute.standard.MediaPrintableArea;
-import java.io.FileInputStream;
-import java.io.InputStream;
+
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -549,9 +547,7 @@ public class Maze
     
     private boolean isValidMove(CellType[][] mazeCopy, int i, int j) 
 	{
-    	if(mazeCopy[i][j] != CellType.WALL && mazeCopy[i][j] != CellType.BEEN_HERE)
-    		return true;
-		return false;
+		return mazeCopy[i][j] != CellType.WALL && mazeCopy[i][j] != CellType.BEEN_HERE;
 	}//end isValidMove
 
     

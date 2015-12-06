@@ -1,13 +1,9 @@
 /**
  * TriviaUtil.java
  * Author: David Walker
- * Revision: 2
+ * Revision: 3
  * Date: 11/10/2015
  * This file is the Utility class of the Trivia Maze
- * currently holds:
- * -Save/Load functions
- * -difficulty menu
- * -Tied together with Maze/Player classes
  */
 
 import com.sun.org.apache.xpath.internal.SourceTree;
@@ -29,10 +25,11 @@ public class TriviaUtil
     private static QuestionHandler qh = new QuestionHandler();
 
     /*
-    loadSaveMenu function
-    prompts the player with the option to load from save file, or to start a new game
-    if the choice is to load from save file, function loadSavedGame is called
+    loadSaveMenu
+    this function prompts the player with the option to load from save file, or to start a new game
+    if the choice is to load from save file, function loadSavedGame is called to handle further details
      */
+
     public static void loadSaveMenu()
     {
         int choice = -1;
@@ -73,6 +70,14 @@ public class TriviaUtil
         } while(!goodInput);
     }
 
+     /*
+	 * saveGame method
+	 * Creates a file object for the save file, if it already exists, prompts the user asking to overwrite or not
+	 * if Yes, the function createSave is called, passing it the file object
+	 * Parameters:
+	 * none
+	 */
+
     public static void saveGame() throws FileNotFoundException
     {
         File save = new File("saved.ser");
@@ -98,6 +103,14 @@ public class TriviaUtil
 
     }
 
+     /*
+	 * createSave Method, receives the File Object passed by the saveGame method
+	 * Creates a PrintWriter object from the File object passed in
+	 * then writes the data of the game to the file, calls the method printMaze to print the maze to the file
+	 * Parameters:
+	 * File object from saveGame
+	 */
+
     public static void createSave(File s) throws FileNotFoundException
     {
         PrintWriter save = new PrintWriter(s);
@@ -111,15 +124,20 @@ public class TriviaUtil
         save.close();
     }
 
+    /*
+    * createNewGame method, creates new instances of the objects of the Game (Player and Maze)
+    * Parameters:
+    * None
+    */
     public static void createNewGame()
     {
         maze = new Maze(3,3);
         player = new Player();
     }
 
-/*
-loadSavedGame function, attempts to create the file saved.ser then calls the readSaveFile
-*/
+    /*
+    loadSavedGame function, attempts to create the file saved.ser then calls the readSaveFile
+    */
     public static void loadSavedGame()
     {
         Object obj = null;
@@ -139,6 +157,8 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
 
     /*
     readSaveFile function, takes a Scanner created from the save file, reads the data and recreates the objects
+    Parameters:
+    receives a Scanner object, which is created from the saved file
      */
     public static void readSaveFile(Scanner save)
     {
@@ -148,8 +168,10 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
         maze = new Maze(3, 3);
         player = new Player("loadingfromSave");
 
-        int r = maze.getNumRows();
-        int c = maze.getNumCols();
+        int r = 9;
+        int c = 9;
+
+        System.out.println(" r + c " + r + " " + c);
 
         if(save.hasNext())
         {
@@ -162,15 +184,21 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
                 for(int y = 0; y < c; y++)
                 {
                     String cell = save.nextLine();
-                    System.out.print(cell + " ");
+                    //System.out.print(cell + " ");
                     loadMaze(maze.getMaze(), x, y, cell);
                 }
-                System.out.println("");
+                //System.out.println("");
             }
 
-            System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
+            //System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
         }
     }
+
+    /*
+    * difficultMenu - currently Unused
+    * Prompts the user for which difficulty of Maze they'd like to play
+    * would return an int dictating the difficulty they'd like to play
+    */
 
     public static int difficultyMenu()
     {
@@ -204,6 +232,13 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
 
         return difficulty;
     }
+
+    /*
+    * playMenu Method, Prompts the user for 3 options, Traverse Maze, Save, Quit
+    * Depending on the choice, each respective method would be called to carried out the action
+    * Parameters:
+    * None
+    */
 
     public static int playMenu()
     {
@@ -241,12 +276,21 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
         return choice;
     }
 
+    /*
+    * traverseMaze method - prints the maze to the user, then gets a direction/quit to main menu response from getDirection method call
+    * if the user chooses to move in a direction which lands them on a question, question is retrieved from the question handler
+    * if the user gets the question correct, they stay, if not they are returned to their previous location or something
+    * Parameters:
+    * None
+    */
+
     public static void traverseMaze()
     {
         Question question;
         boolean isQuestionCell = false;
         int checkQuit;
         String questionType = "";
+        boolean questionCorrect;
 
        do
        {
@@ -260,7 +304,11 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
                 try
                 {
                     question = qh.checkFlagsReset(questionType, db);
-                    qh.handleQuestion(question, maze); //also updates the maze
+                    questionCorrect = qh.handleQuestion(question, maze); //also updates the maze
+                    if(questionCorrect)
+                    {
+                        player.setqCorrect(player.getqCorrect() + 1);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -273,6 +321,11 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
             
     }
 
+    /*
+    * quitGame method - prints out the statistics of the game stores by the Player object
+    * Parameters:
+    * None
+    */
 
     public static void quitGame()
     {
@@ -290,6 +343,15 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
         System.out.println("You answered " + player.getqCorrect() + " questions correct");
         System.out.println("Your game lasted " + fDate);
     }
+
+    /*
+    * loadMaze method - is called by the loadSaveFile method, it's passed the params below
+    * it uses these to recreate a CellType, then stores that inside of the location of the maze i/j passed in
+    * Parameters:
+    * CellType[][] maze - the maze array from the main maze object to recreate the maze from save
+    * int i, j - row/col location
+    * String cell - the string from the save file dictating what the location will be
+    */
 
     public static void loadMaze(CellType[][] m, int i, int j, String cell)
     {
@@ -331,8 +393,9 @@ loadSavedGame function, attempts to create the file saved.ser then calls the rea
         {
             c =  CellType.BLANK;
         }
-        else if(cell.equals("P")) //formerly P
+        else if(cell.equals("P"))
         {
+            System.out.println("cur pos: " + i + " " + j);
             c =  CellType.PLAYER;
             maze.setPosition(i, j);
         }

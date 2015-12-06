@@ -79,7 +79,7 @@ public class QuestionHandler
 	 * Maze maze - a maze 
 	 */
 	
-	public void handleQuestion(Question question, Maze maze)
+	public boolean handleQuestion(Question question, Maze maze)
 	{
 		String input;
 		boolean isCorrect;
@@ -93,7 +93,8 @@ public class QuestionHandler
 		isCorrect = question.checkCorrectAnswer(input);
 	//	System.out.println("answer is correct: " + isCorrect);
 		maze.postUpdate(isCorrect); //updating the maze could be done somewhere else
-		
+
+		return isCorrect;
 	}//end handleQuestion
 
 }//end QuestionHandler
