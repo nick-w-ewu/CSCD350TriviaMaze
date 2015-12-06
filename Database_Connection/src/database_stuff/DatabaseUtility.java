@@ -45,12 +45,12 @@ public class DatabaseUtility
 			conn = DriverManager.getConnection("jdbc:sqlite:questions2.db");
 
 			return true;
-		}
+		}//end try
 		catch (Exception e)
 		{
 			return false;
-		}
-	}
+		}//end catch
+	}//end connectDatabase
 
 	/*
 	 * Retrieves a random question from the database given a question type
@@ -78,7 +78,7 @@ public class DatabaseUtility
 		break;
 		default:
 			throw new IllegalArgumentException("You have provided an invalid question type");
-		}
+		}//end switch
 		try
 		{
 			this.stmt = conn.prepareStatement(sql);
@@ -95,25 +95,25 @@ public class DatabaseUtility
 			case("shortanswer"):
 				toReturn = processShortAnswer(results, factory);
 			break;
-			}
+			}//end switch
 			return toReturn;
-		}
+		}//end try
 		catch (SQLException e)
 		{
 			return factory.createQuestion(ERROR);
-		}
+		}//end catch
 		finally
 		{
 			try
 			{
 				this.stmt.close();
-			} 
+			}//end try
 			catch (SQLException e1)
 			{
 				
-			}
-		}
-	}
+			}//end catch
+		}//end finally
+	}//end retrieveQuestion
 
 	/*
 	 * Processes the ResultSet for a truefalse question retrieved from the database
@@ -137,12 +137,12 @@ public class DatabaseUtility
 			newQuestion.setCorrectAnswer(answer);
 			newQuestion.setQuestion(question);
 			return newQuestion;
-		} 
+		}//end try
 		catch (SQLException e)
 		{
 			return factory.createQuestion(ERROR);
-		}
-	}
+		}//end catch
+	}//end processTrueFalse
 
 	/*
 	 * Processes the ResultSet for a shortanswer question retrieved from the database
@@ -169,12 +169,12 @@ public class DatabaseUtility
 			newQuestion.setChoices(keywords);
 			newQuestion.setQuestion(question);
 			return newQuestion;
-		} 
+		}//end try
 		catch (SQLException e)
 		{
 			return factory.createQuestion(ERROR);
-		}
-	}
+		}//end catch
+	}//end processShortAnswer
 
 	/*
 	 * Processes the ResultSet for a multiplechoice question retrieved from the database
@@ -204,12 +204,12 @@ public class DatabaseUtility
 			newQuestion.setCorrectAnswer(answer);
 			newQuestion.setQuestion(question);
 			return newQuestion;
-		} 
+		}//end try 
 		catch (SQLException e)
 		{
 			return factory.createQuestion(ERROR);
-		}
-	}
+		}//end catch
+	}//end processMultipleChoice
 
 	/*
 	 * Sets the answered flag associated with a retrieved question in the database based on the question_id
@@ -235,11 +235,11 @@ public class DatabaseUtility
 			case("shortanswer"):
 				sql = "update shortanswer set answered = 1 where question_id = ?;";
 				break;
-		}
+		}//end switch
 		this.updateStmt = this.conn.prepareStatement(sql);
 		this.updateStmt.setInt(1, id);
 		this.updateStmt.executeUpdate();		
-	}
+	}//end setAnswered
 
 	/*
 	 * Sets the answered flag for all the questions in the database of the specified type to false
@@ -264,18 +264,18 @@ public class DatabaseUtility
 				break;
 			default:
 				return false;
-		}
+		}//end switch
 		try
 		{
 			runUpdate(sql);
 			return true;
-		}
+		}//end try
 		catch(Exception e)
 		{
 			e.printStackTrace();
 			return false;
-		}
-	}
+		}//end catch
+	}//end resetFlags
 
 	/*
 	 * Runs the database update specified by the passed in sql string and then closes the PreparedStatement
@@ -290,5 +290,5 @@ public class DatabaseUtility
 		this.updateStmt = this.conn.prepareStatement(sql);
 		this.updateStmt.executeUpdate();
 		this.updateStmt.close();
-	}
+	}//end runUpdate
 }//End DatabaseUtility
