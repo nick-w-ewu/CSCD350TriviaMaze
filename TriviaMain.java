@@ -39,6 +39,9 @@ public class TriviaMain
             }
 
         }while(t==1 || t==2);
+        System.out.println("");
+        System.out.println("Press any key to exit");
+        kb.nextLine();
     }
 
 }
