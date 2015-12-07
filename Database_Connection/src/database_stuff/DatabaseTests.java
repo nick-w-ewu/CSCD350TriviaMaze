@@ -1,3 +1,12 @@
+/**
+ *DatabaseTests.java
+ *Author: Nicholas Witmer
+ *Revision: 1, Nicholas Witmer
+ *Date: 11/28/2015
+ *Unit tests for functionality provided by DatabaseInsert.java and DatabaseUtility.java
+ *
+ */
+
 package database_stuff;
 
 import static org.junit.Assert.*;
@@ -22,12 +31,20 @@ public class DatabaseTests
 		test1 = new DatabaseInsert();
 	}
 	
+	/*
+	 * Tests the insertion of a true false question using the DatabaseInsert insertQuestion() method
+	 */
+	
 	@Test
 	public void testInsertTrueFalse()
 	{
 		assertTrue(test1.insertQuestion("Will it rain today", "t"));
 		assertFalse(test1.insertQuestion(null, "t"));
 	}
+	
+	/*
+	 * Tests the insertion of a short question using the DatabaseInsert insertQuestion() method
+	 */
 	
 	@Test
 	public void testInsertShortAnswer()
@@ -36,6 +53,10 @@ public class DatabaseTests
 		assertFalse(test1.insertQuestion("What is my name", null, null));
 	}
 	
+	/*
+	 * Tests the insertion of a multiple choice question using the DatabaseInsert insertQuestion() method
+	 */
+	
 	@Test
 	public void testInsertMultipleChoice()
 	{
@@ -43,17 +64,9 @@ public class DatabaseTests
 		assertFalse(test1.insertQuestion("What is my name", "3", "Nick", "Fish", null, "Nothing"));
 	}
 	
-	//Will fail on first run if the database is empty
-	@Test
-	public void testretrieveQuestions()
-	{
-		Question q1 = test.retrieveQuestion("shortanswer");
-		Question q2 = test.retrieveQuestion("truefalse");
-		Question q3 = test.retrieveQuestion("multiplechoice");
-		assertFalse(q1.getError());
-		assertFalse(q2.getError());
-		assertFalse(q3.getError());
-	}
+	/*
+	 * Tests resetting the answered flags in the database for various question types with the resetFlags() method in DatabaseUtility.java
+	 */
 	
 	@Test
 	public void testResetFlags()
@@ -63,6 +76,4 @@ public class DatabaseTests
 		assertTrue(test.resetFlags("truefalse"));
 		assertFalse(test.resetFlags("test"));
 	}
-
-	
-}
+}//End DatabaseTests
