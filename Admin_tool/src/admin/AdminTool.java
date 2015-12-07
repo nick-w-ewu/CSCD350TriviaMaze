@@ -27,6 +27,7 @@ public class AdminTool
 		DatabaseInsert insert = new DatabaseInsert();
 		Scanner input = new Scanner(System.in);
 		int userSelection = displayMenu(input);
+		boolean sucess = false;
 		
 		System.out.println(userSelection);
 		while(userSelection != 4)
@@ -34,15 +35,23 @@ public class AdminTool
 			switch(userSelection)
 			{
 				case 1:
-					insertTrueFalse(input, insert);
+					sucess = insertTrueFalse(input, insert);
 					break;
 				case 2:
-					insertShortAnswer(input, insert);
+					sucess = insertShortAnswer(input, insert);
 					break;
 				case 3:
-					insertMultipleChoice(input, insert);
+					sucess = insertMultipleChoice(input, insert);
 					break;
 			}//end switch
+			if(sucess)
+			{
+				System.out.println("Question sucessfully inserted into Triva Maze");
+			}//end if
+			else
+			{
+				System.out.println("There was an error inserting the question into the Triva Maze");
+			}//end else
 			userSelection = displayMenu(input);
 		}//end while
 		System.out.println("Thank You for using the Triva Maze Admin Tool, we are not exiting...");
@@ -55,10 +64,12 @@ public class AdminTool
 	 * Scanner input - a scanner attached to system.in to interact with the user
 	 * DatabaseInsert insert - a DatabaseInsert object that is connected to the database used to insert
 	 * a question once the user has entered all the required fields
+	 * Returns;
+	 * boolean - True if the insert operation was successful, false if it was not
 	 * 
 	 */
 	
-	static void insertShortAnswer(Scanner input, DatabaseInsert insert)
+	static boolean insertShortAnswer(Scanner input, DatabaseInsert insert)
 	{
 		String question, answer, keyWords;
 		boolean sucess;
@@ -73,14 +84,7 @@ public class AdminTool
 		}//end while
 		keyWords = getKeyWords(input, answer);
 		sucess = insert.insertQuestion(question, answer, keyWords);
-		if(sucess)
-		{
-			System.out.println("Question sucessfully inserted into Triva Maze");
-		}//end if
-		else
-		{
-			System.out.println("There was an error inserting the question into the Triva Maze");
-		}//end else
+		return sucess;
 	}//end insertShortAnswer
 	
 	/*
@@ -105,7 +109,10 @@ public class AdminTool
 		keyWord = input.nextLine();
 		while(!keyWord.equals("]") || keyWord.equals(""))
 		{
-			keyWords = keyWords + "," + keyWord;
+			if(!keyWord.equals(""))
+			{
+				keyWords = keyWords + "," + keyWord;
+			}
 			System.out.println("Enter another keyword or type ] if you are finished");
 			keyWord = input.nextLine();
 		}//end while
@@ -142,10 +149,11 @@ public class AdminTool
 	 * Scanner input - a scanner attached to system.in to interact with the user
 	 * DatabaseInsert insert - a DatabaseInsert object that is connected to the database used to insert
 	 * a question once the user has entered all the required fields
-	 * 
+	 * Returns;
+	 * boolean - True if the insert operation was successful, false if it was not
 	 */
 	
-	static void insertTrueFalse(Scanner input, DatabaseInsert insert)
+	static boolean insertTrueFalse(Scanner input, DatabaseInsert insert)
 	{
 		String pattern = "((?i)[tf])";
 		boolean validInput = false, sucess;
@@ -164,14 +172,7 @@ public class AdminTool
 				System.out.println("Invalid input, must be t or f. Try again.");
 		} while (!validInput);
 		sucess = insert.insertQuestion(question, answer);
-		if(sucess)
-		{
-			System.out.println("Question sucessfully inserted into Triva Maze");
-		}//end if
-		else
-		{
-			System.out.println("There was an error inserting the question into the Triva Maze");
-		}//end else
+		return sucess;
 	}//end insertTrueFalse
 	
 	/*
@@ -181,10 +182,11 @@ public class AdminTool
 	 * Scanner input - a scanner attached to system.in to interact with the user
 	 * DatabaseInsert insert - a DatabaseInsert object that is connected to the database used to insert
 	 * a question once the user has entered all the required fields
-	 * 
+	 * Returns;
+	 * boolean - True if the insert operation was successful, false if it was not
 	 */
 	
-	static void insertMultipleChoice(Scanner input, DatabaseInsert insert)
+	static boolean insertMultipleChoice(Scanner input, DatabaseInsert insert)
 	{
 		String question, option1, option2, option3, option4, correctAnswer;
 		int answer;
@@ -203,14 +205,7 @@ public class AdminTool
 		}//end while
 		correctAnswer = getCorrectAnswer(option1, option2, option3, option4, answer);
 		sucess = insert.insertQuestion(question, correctAnswer, option1, option2, option3, option4);
-		if(sucess)
-		{
-			System.out.println("Question sucessfully inserted into Triva Maze");
-		}//end if
-		else
-		{
-			System.out.println("There was an error inserting the question into the Triva Maze");
-		}//end else
+		return sucess;
 	}//end insertMultipleChoice
 	
 	/*

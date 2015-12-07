@@ -167,4 +167,4 @@ public class DatabaseInsert
 			return false;
 		}//end catch
 	}//end insertQuestion
-}
+}//end DatabaseInsert
