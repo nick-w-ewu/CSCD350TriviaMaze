@@ -12,7 +12,7 @@ public class MazeTester
 {
 	public static void main(String[] args) 
 	{
-		Maze m = new Maze(3,3);
+		Maze m = new Maze(2,2);
 		
 		do
 		{

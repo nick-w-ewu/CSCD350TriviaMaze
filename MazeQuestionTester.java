@@ -1,15 +1,21 @@
 package triviamaze;
 
-public class MazeQuestionTester {
+/**
+ * MazeTester.java
+ * Author: Jenia Rousseva
+ * Revision: 1, Jenia Rousseva
+ * Date: 12/03/2015
+ * This file tests the generation and traversal a Maze object along with 
+ * the retrieval of a question from the database..
+ */
 
-	public MazeQuestionTester() {
-		// TODO Auto-generated constructor stub
-	}
-	
+public class MazeQuestionTester 
+{
+
 	public static void main(String [] args)
 	{
 		DatabaseUtility db = new DatabaseUtility();
-		Maze m = new Maze(3, 3);
+		Maze m = new Maze(2, 2);
 		QuestionHandler qh = new QuestionHandler();
 		Question question;
 		

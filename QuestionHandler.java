@@ -91,7 +91,6 @@ public class QuestionHandler
 		
 		input = question.getValidInput();
 		isCorrect = question.checkCorrectAnswer(input);
-	//	System.out.println("answer is correct: " + isCorrect);
 		maze.postUpdate(isCorrect); //updating the maze could be done somewhere else
 		
 	}//end handleQuestion

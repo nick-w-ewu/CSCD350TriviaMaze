@@ -3,17 +3,18 @@ package triviamaze;
 import java.util.Scanner;
 
 /**
- * Maze.java
+ * MazeCopy.java
  * Author: Jenia Rousseva
- * Revision: 4, Jenia Rousseva
+ * Revision: 1, Jenia Rousseva
  * Date: 12/6/2015
- * This file provides the basic construction for a 2-D non-perfect maze.
- * The maze contains slots which are either walls, open spaces, or specific question types.
- * This file also contains the methods for traversal through the maze and 
- * for finding if a path(s) exist(s) from the start to the end of the maze.
+ * This class is created for unit testing purposes only. It contains all 
+ * of the methods from the Maze.java file in addition to some getters and
+ * setters which have been to facilitate unit testing. Also, some private
+ * methods from the Maze.java file have been made public to allow for
+ * unit tests.
  */
 
-public class Maze 
+public class MazeCopy 
 {
 	static final double PROB_OPEN = 0.5;
 	static final double PROB_QUESTION = 0.65;
@@ -22,6 +23,141 @@ public class Maze
 	private CellType[][] maze;
 	
 	private boolean isEnd;
+	
+
+	/* 
+	 * The following methods were added to the methods from the Maze class
+	 * to facilitate unit testing.
+	 */
+   /* --------------------------------------------------------------*/
+	
+	/*
+	 * EVC constructor
+	 * Parameters:
+	 * CellType[][] maze - An already constructed maze
+	 */
+	
+	public MazeCopy(CellType [][] maze)
+	{
+		this.maze = maze;
+	}//end MazeCopy
+	
+	
+	/*
+	 * Get the row number of the player's current position in the maze. 
+	 * Returns:
+	 * int - the current row number
+	 */
+	
+	public int getCurRow()
+	{
+		return this.curRow;
+	}//end getCurRow
+	
+	
+	/*
+	 * Get the column number of the player's current position in the maze. 
+	 * Returns:
+	 * int - the current column number
+	 */
+	
+	public int getCurCol()
+	{
+		return this.curCol;
+	}//end getCurCol
+	
+	
+	/*
+	 * Get the row number of the player's most recently visited position in the maze. 
+	 * Returns:
+	 * int - the current row number
+	 */
+	
+	public int getPrevRow()
+	{
+		return this.prevRow;
+	}//end getPrevRow
+	
+	
+	/*
+	 * Get the column number of the player's most recently visited position in the maze. 
+	 * Returns:
+	 * int - the current column number
+	 */
+	
+	public int getPrevCol()
+	{
+		return this.prevCol;
+	}//end getPrevCol
+	
+	
+	/*
+	 * Get the type of the cell of the passed in position.
+	 * Parameters: 
+	 * int i - a row number
+	 * int j - column number
+	 * Returns:
+	 * CellType - the type of cell
+	 */
+	
+	public CellType getCell(int i, int j)
+	{
+		return this.maze[i][j];
+	}//end getCell
+	
+	
+	/*
+	 * Set the current row in the maze.
+	 * Parameters:
+	 * int row - the new row number
+	 */
+	
+	public void setCurRow(int row)
+	{
+		this.curRow = row;
+	}//end setCurRow
+	
+	
+	/*
+	 * Set the current column in the maze.
+	 * Parameters:
+	 * int col - the new column number
+	 */
+	
+	public void setCurCol(int col)
+	{
+		this.curCol = col;
+	}//end setCurCol
+	
+	
+	/*
+	 * Set a cell in the maze to a given type.
+	 * Parameters:
+	 * int i - the row number in the maze
+	 * int j - the column number in the maze
+	 * CellType type - the new type of the cell
+	 */
+	
+	public void setCell(int i, int j, CellType type)
+	{
+		this.maze[i][j] = type;
+	}//end setCell
+	
+	
+	/*
+	 * Set the previous position.
+	 * Parameters:
+	 * int i - the previous row number
+	 * int j - the previous column number
+	 */
+	
+	public void setPrevPosition(int i, int j)
+	{
+		this.prevRow = i;
+		this.prevCol = j;
+	}//end setPrevPosition
+	
+	/*------------------------------------------------------------*/
 	
 	
 	/*
@@ -32,17 +168,34 @@ public class Maze
      * int cols - actual number of columns
 	 */
 	
-	public Maze(int rows, int cols)
+	public MazeCopy(int rows, int cols)
 	{
 		Ellers ellerMaze = new Ellers(rows, cols);
 		this.maze = ellerMaze.getMaze();
 
 		findEntrance();
 		findExit();
-		
-		/* Takes care of converting a perfect maze into a non-perfect one. */
-		findPath(this.maze, this.curRow, this.curCol, true); 
+
+	//	System.out.println("Before Find Path");
+	//	printMaze(this.maze);
+
+		findPath(this.maze, this.curRow, this.curCol, true);
+
+	//	System.out.println("BEFORE setting the final maze!");
+	//	printMaze(this.maze);
+
 		setFinalMaze();
+
+	//	System.out.println("After setting the final maze!");
+	//	printMaze(this.maze);
+
+	//	CellType[][] copy = createCopy(this.maze);
+
+	//	System.out.println("curRow = " + this.curRow + "  curCol = " + this.curCol);
+	//	copy[this.curRow][this.curCol] = CellType.START;
+
+//		System.out.println("Total number of possible paths to the end: " + findAllPaths(copy, this.curRow, curCol));
+//		printMaze(this.maze);
 	}//Maze
 	
 	
@@ -65,7 +218,7 @@ public class Maze
 	 * int j - Ths new column index
 	 */
 	
-	private void setPosition(int i, int j)
+	public void setPosition(int i, int j)
 	{
 		this.curRow = i;
 		this.curCol = j;
@@ -116,7 +269,7 @@ public class Maze
 	 * Eller's algorithm. Returns as soon as the cell marked with an 'S' is found.
 	*/ 
 	
-    private void findEntrance()
+    public void findEntrance()
     { 
     	for (int i = 1; i < this.maze.length - 1; i ++)
     	{
@@ -138,7 +291,7 @@ public class Maze
 	 * Returns as soon as the cell marked with an 'G' is found.
 	*/ 
     
-    private void findExit()
+    public void findExit()
     {
     	for (int i = 0; i < this.maze.length - 1; i++)
     	{
@@ -200,7 +353,7 @@ public class Maze
 	 * CellType[][] mazeCopy - The maze to be printed
 	 */
 	
-	private void printMaze(CellType[][] mazeCopy)
+	public void printMaze(CellType[][] mazeCopy)
 	{
 		for(int i = 0; i < mazeCopy.length; i++)
 		{
@@ -247,7 +400,7 @@ public class Maze
 	 * boolean - If the user has reached the target position
 	 */
 	
-	private boolean reachEnd(int i, int j) 
+	public boolean reachEnd(int i, int j) 
 	{
 		if (maze[i][j] == CellType.END) 
 		{
@@ -642,4 +795,4 @@ public class Maze
 		return paths;
 	}//end findAllPaths
 	
-}//end Maze
+}//end MazeCopy

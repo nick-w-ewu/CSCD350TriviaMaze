@@ -28,6 +28,10 @@ public class MultipleChoiceQuestionTest
 	public static void tearDownAfterClass() throws Exception {}
 
 	
+	/*
+	 * Set up a sample multiple choice question.
+	 */
+	
 	@Before
 	public void setUp() throws Exception 
 	{
@@ -42,6 +46,11 @@ public class MultipleChoiceQuestionTest
 	public void tearDown() throws Exception {}
 	
 	
+	/*
+	 * Test the getQuestion method in the Question class.
+	 * Should return a String representation of the question prompt.
+	 */
+	
 	@Test
 	public void testGetQuestion() 
 	{
@@ -49,12 +58,20 @@ public class MultipleChoiceQuestionTest
 	}//end testGetQuestion
 	
 	
+	/*
+	 * Test retrieving the correct answer.
+	 */
+	
 	@Test
 	public void testGetCorrectAnswer() 
 	{
 		assertEquals("Olympia", test.getCorrectAnswer());
 	}//end testGetCorrectAnswer
 	
+	
+	/*
+	 * Test retrieving each of the answer choices.
+	 */
 	
 	@Test
 	public void testGetChoices() 
@@ -65,6 +82,11 @@ public class MultipleChoiceQuestionTest
 		assertEquals("Washington DC", test.getChoices()[3]);
 	}//end testGetChoices
 
+	
+	/*
+	 * Test check if the answer provided by the player is 
+	 * correct.
+	 */
 	
 	@Test
 	public void testCheckCorrectAnswer() 

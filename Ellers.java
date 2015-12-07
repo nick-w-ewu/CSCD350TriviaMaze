@@ -71,6 +71,7 @@ public class Ellers
      * Returns:
      * CellType[][] - The current maze
      */
+    
     public CellType[][] getMaze()
     {
         return this.maze;
@@ -161,9 +162,11 @@ public class Ellers
                 }//end else
             }//end for
         }//end for
+        
         makeLastRow();
         makeOpenings();
     }//end makeMaze
+    
     
     /*
      * Join two sets into one.

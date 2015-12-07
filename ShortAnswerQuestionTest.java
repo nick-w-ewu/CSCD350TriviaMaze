@@ -28,6 +28,10 @@ public class ShortAnswerQuestionTest
 	public static void tearDownAfterClass() throws Exception {}
 
 	
+	/*
+	 * Set up a sample short answer question.
+	 */
+	
 	@Before
 	public void setUp() throws Exception 
 	{
@@ -42,19 +46,31 @@ public class ShortAnswerQuestionTest
 	public void tearDown() throws Exception {}
 
 	
+	/*
+	 * Test retrieving the question prompt.
+	 */
+	
 	@Test
 	public void testGetQuestion() 
 	{
 		assertEquals("Name one color present on the French flag.", test.getQuestion());
 	}//end testGetQuestion
+
 	
-	
+    /* 
+     * Test retrieving the correct answer to the question.
+     */
+
 	@Test
 	public void testGetCorrectAnswer() 
 	{
 		assertEquals("blue", test.getCorrectAnswer());
 	}//end testGetCorrectAnswer
 	
+	
+	/*
+	 * Test retrieving the keywords from the array.
+	 */
 	
 	@Test
 	public void testGetKeywords() 
@@ -64,6 +80,10 @@ public class ShortAnswerQuestionTest
 		assertEquals("blue", test.getChoices()[2]);
 	}//end testGetKeywords
 	
+	
+	/*
+	 * Test checking if the answer provided by the player is correct.
+	 */
 	
 	@Test
 	public void testCheckCorrectAnswer() 

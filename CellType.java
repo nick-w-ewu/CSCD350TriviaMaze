@@ -27,11 +27,13 @@ public enum CellType
 	SAQUESTION,
 	EMPTY;
 	
+	
 	/*
 	 * Returns a string representation of the particular enum.
 	 * Returns:
 	 * String - A string character for the enum
 	 */
+	
 	@Override 
 	public String toString()
 	{
@@ -52,7 +54,7 @@ public enum CellType
 			case MCQUESTION: return "2";
 			case SAQUESTION: return "3";
 			default: return " ";
-		}
+		}//end switch
 		
 	}//end toString
 	

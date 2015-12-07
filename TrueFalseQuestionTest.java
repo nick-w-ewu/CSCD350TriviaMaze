@@ -27,6 +27,10 @@ public class TrueFalseQuestionTest
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {}
 	
+	
+	/*
+	 * Set up a sample true/false question.
+	 */
 
 	@Before
 	public void setUp() throws Exception 
@@ -41,12 +45,20 @@ public class TrueFalseQuestionTest
 	public void tearDown() throws Exception {}
 	
 
+	/*
+	 * Test getting the question prompt.
+	 */
+	
 	@Test
 	public void testGetQuestion() 
 	{
 		assertEquals("The length of a year on earth is 365 days.", test.getQuestion());
 	}//end testGetQuestion
 	
+	
+	/*
+	 * Test getting the correct answer.
+	 */
 
 	@Test
 	public void testGetCorrectAnswer() 
@@ -54,6 +66,10 @@ public class TrueFalseQuestionTest
 		assertEquals("F", test.getCorrectAnswer());
 	}//end testGetCorrectAnswer
 	
+	
+	/*
+	 * Test checking the player's answer with the correct answer.
+	 */
 
 	@Test
 	public void testCheckCorrectAnswer() 
