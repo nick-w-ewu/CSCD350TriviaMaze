@@ -36,11 +36,13 @@ public class TriviaMain
             {
                 TriviaUtil.quitGame();
                 //quit
-            }
+            } //end if/else
 
-        }while(t==1 || t==2);
+        }while(t==1 || t==2); //end of while
+
         System.out.println("");
         System.out.println("Press any key to exit");
+
         kb.nextLine();
     }
 

@@ -58,17 +58,17 @@ public class TriviaUtil
                     else
                     {
                         createNewGame();
-                    }
-                }
-            }
+                    } //end inner if/else
+                } //end outer if/else
+            } // end try
             catch (Exception e)
             {
                 System.out.println("Input is not valid, try again");
                 goodInput = false;
                 String clear = kb.nextLine();
-            }
+            } //end catch
         } while(!goodInput);
-    }
+    } // end loadSaveMenu
 
      /*
 	 * saveGame method
@@ -98,10 +98,10 @@ public class TriviaUtil
             else
             {
                 System.out.println("Game not saved");
-            }
-        }
+            }//end if/else
+        } // end if
 
-    }
+    }//end saveGame
 
      /*
 	 * createSave Method, receives the File Object passed by the saveGame method
@@ -124,7 +124,7 @@ public class TriviaUtil
         save.println(maze.getCurCol());
         maze.printMaze(save); //save maze so it can be loaded
         save.close();
-    }
+    } //end createSave
 
     /*
     * createNewGame method, creates new instances of the objects of the Game (Player and Maze)
@@ -135,7 +135,7 @@ public class TriviaUtil
     {
         maze = new Maze(3,3);
         player = new Player();
-    }
+    } //end createNewGame
 
     /*
     loadSavedGame function, attempts to create the file saved.ser then calls the readSaveFile
@@ -154,8 +154,8 @@ public class TriviaUtil
         catch (FileNotFoundException e)
         {
             System.out.println("Save file not found");
-        }
-    }
+        } //end try/catch
+    } //end loadSavedGame
 
     /*
     readSaveFile function, takes a Scanner created from the save file, reads the data and recreates the objects
@@ -196,13 +196,13 @@ public class TriviaUtil
                     String cell = save.nextLine();
                     //System.out.print(cell + " ");
                     loadMaze(maze.getMaze(), x, y, cell);
-                }
+                } //end inner for
                 //System.out.println("");
-            }
+            } //end outer for
 
             //System.out.println(player.getName() + " " + player.getNumItems() + " " + player.getqCorrect());
-        }
-    }
+        } //end if
+    } // end readSaveFile
 
     /*
     * difficultMenu - currently Unused
@@ -237,11 +237,11 @@ public class TriviaUtil
                 System.out.println("Input is not a valid integer, try again");
                 goodInput = false;
                 String clear = kb.nextLine();
-            }
+            } //end try/catch
         } while (!goodInput);
 
         return difficulty;
-    }
+    } //end difficulty Menu
 
     /*
     * playMenu Method, Prompts the user for 3 options, Traverse Maze, Save, Quit
@@ -274,17 +274,17 @@ public class TriviaUtil
                 else
                 {
                     goodInput = true;
-                }
+                } //end choice if/else
             } catch (Exception e)
             {
                 System.out.println("Input is not a valid integer, try again");
                 goodInput = false;
                 String clear = kb.nextLine();
-            }
+            } //end try/catch
         } while (!goodInput);
 
         return choice;
-    }
+    } //end playMenu
 
     /*
     * traverseMaze method - prints the maze to the user, then gets a direction/quit to main menu response from getDirection method call
@@ -319,17 +319,17 @@ public class TriviaUtil
                     {
                         player.setqCorrect(player.getqCorrect() + 1);
                     }
-                }
+                } //end try
                 catch (Exception ex)
                 {
                     ex.printStackTrace();
-                }
+                } //end try catch
             }//end if
 
         } while(maze.pathExists() && !maze.getIsEnd() && checkQuit != -1);
         
             
-    }
+    } //end traverseMaze
 
     /*
     * quitGame method - prints out the statistics of the game stores by the Player object
@@ -352,7 +352,7 @@ public class TriviaUtil
         System.out.println(player.getName() + ": ");
         System.out.println("You answered " + player.getqCorrect() + " questions correct");
         System.out.println("Your game lasted " + fDate);
-    }
+    } //end quitGame
 
     /*
     * loadMaze method - is called by the loadSaveFile method, it's passed the params below
