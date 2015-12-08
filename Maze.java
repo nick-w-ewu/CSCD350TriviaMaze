@@ -1,12 +1,13 @@
 package triviamaze;
 
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
  * Maze.java
  * Author: Jenia Rousseva
- * Revision: 4, Jenia Rousseva
- * Date: 12/6/2015
+ * Revision: 5, Jenia Rousseva
+ * Date: 12/8/2015
  * This file provides the basic construction for a 2-D non-perfect maze.
  * The maze contains slots which are either walls, open spaces, or specific question types.
  * This file also contains the methods for traversal through the maze and 
@@ -46,6 +47,18 @@ public class Maze
 	}//Maze
 	
 	
+	 /*
+	 * Returns the maze		
+	 * using it for the writing to save file process
+	 * Returns:
+	 * CellType [][] - the current maze
+	 */
+	public CellType[][] getMaze()
+	{
+		return maze;
+	}//end getMaze
+	
+	
 	/*
 	 * Returns whether the current position is the target position.
 	 * Returns:
@@ -65,7 +78,7 @@ public class Maze
 	 * int j - Ths new column index
 	 */
 	
-	private void setPosition(int i, int j)
+	void setPosition(int i, int j)
 	{
 		this.curRow = i;
 		this.curCol = j;
@@ -278,9 +291,11 @@ public class Maze
 	 * Gets the direction to move from the player (north, east, south, or west)
 	 * and verifies that this is a valid direction. Loops until the user quits or
 	 * enters a valid direction.
+	 * Returns:
+	 * int - 1 on success
 	 */
 	
-	public void getDirection() 
+	public int getDirection() 
 	{
 		Scanner sc = new Scanner(System.in);
 		boolean validInput = false;
@@ -288,7 +303,7 @@ public class Maze
 		char ch = 'N';
 
 		do {
-			System.out.print("Enter the direction you wish to move (N, E, S, W), V to view your party, or Q to quit): ");
+			System.out.print("Enter the direction you wish to move (N, E, S, W), or Q to quit): ");
 			choice = sc.next();
 			choice.trim();
 
@@ -317,6 +332,7 @@ public class Maze
 		if (ch != 'Q')
 			verifyDirection(ch);		
 	//	sc.close();
+		return 1;
 	}//end getDirection
 
 	
@@ -642,4 +658,68 @@ public class Maze
 		return paths;
 	}//end findAllPaths
 	
+	/*
+	 * Overridden to accept PrintWriter for writing/file saving
+	 * Parameter:
+	 * CellType[][] mazeCopy - The maze to be printed
+	 */
+	protected void printMaze(PrintWriter pout)
+	{
+		for(int i = 0; i < maze.length; i++)
+		{
+			for(int j=0; j < maze.length; j++)
+			{
+				pout.println(maze[i][j]);
+			}//end for
+		}//end for
+	}//end printMaze
+	
+	
+	/* 
+	 * Returns the current row in the maze. 
+	 * Returns:
+	 * int - the current row
+	 */
+	
+	public int getCurRow()
+	{
+		return curRow;
+	}//end getCurRow
+
+	
+	/*
+	 * Sets the current row in the maze.
+	 * Parameters:
+	 * int curRow -  the new current row
+	 */
+	
+	public void setCurRow(int curRow)
+	{
+		this.curRow = curRow;
+	}//end setCurRow
+	
+	
+	/*
+	 * Return the current column in the maze.
+	 * Returns:
+	 * int - the current column
+	 */
+	
+	public int getCurCol()
+	{
+		return curCol;
+	}//end getCurCol
+	
+	
+	/*
+	 * Set the current column in the maze.
+	 * Parameters:
+	 * int curCol - the current column
+	 */
+
+	public void setCurCol(int curCol)
+	{
+		this.curCol = curCol;
+	}
+
 }//end Maze

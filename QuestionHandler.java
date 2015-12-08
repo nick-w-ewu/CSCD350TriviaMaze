@@ -77,9 +77,11 @@ public class QuestionHandler
 	 * Parameters:
 	 * Question question - either a true/false, multiple choice, or short answer question
 	 * Maze maze - a maze 
+	 * Returns:
+	 * int - whether the answer was correct or not
 	 */
 	
-	public void handleQuestion(Question question, Maze maze)
+	public boolean handleQuestion(Question question, Maze maze)
 	{
 		String input;
 		boolean isCorrect;
@@ -92,6 +94,8 @@ public class QuestionHandler
 		input = question.getValidInput();
 		isCorrect = question.checkCorrectAnswer(input);
 		maze.postUpdate(isCorrect); //updating the maze could be done somewhere else
+		
+		return isCorrect;
 		
 	}//end handleQuestion
 
