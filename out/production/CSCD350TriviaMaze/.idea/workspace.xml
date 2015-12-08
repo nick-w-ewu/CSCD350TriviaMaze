@@ -31,15 +31,15 @@
       <file leaf-file-name="TriviaMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TriviaMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2777778">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.74530274">
+              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TriviaUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+      <file leaf-file-name="triviaUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/triviaUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
@@ -136,7 +136,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -164,7 +164,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -186,6 +185,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -705,16 +705,17 @@
       <workItem from="1449263632587" duration="8261000" />
       <workItem from="1449380541541" duration="4467000" />
       <workItem from="1449429007656" duration="4661000" />
-      <workItem from="1449456114527" duration="426000" />
+      <workItem from="1449456114527" duration="712000" />
+      <workItem from="1449537079634" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54349000" />
+    <option name="totallyTimeSpent" value="54654000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -769,12 +770,6 @@
           <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
           <folding>
             <element signature="e#0#8283#0" expanded="false" />
-            <marker date="1449198488763" expanded="true" signature="1699:1767" placeholder="select * fro..truefalse..." />
-            <marker date="1449198488763" expanded="true" signature="1829:1902" placeholder="select * fro..multiplechoice..." />
-            <marker date="1449198488763" expanded="true" signature="1961:2031" placeholder="select * fro..shortanswer..." />
-            <marker date="1449198488763" expanded="true" signature="6620:6675" placeholder="update truef..." />
-            <marker date="1449198488763" expanded="true" signature="6737:6797" placeholder="update multi..." />
-            <marker date="1449198488763" expanded="true" signature="6856:6913" placeholder="update short..." />
           </folding>
         </state>
       </provider>
@@ -795,7 +790,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="145" column="25" selection-start-line="145" selection-start-column="25" selection-end-line="145" selection-end-column="25" />
@@ -866,7 +861,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
@@ -927,7 +922,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -988,7 +983,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
@@ -1057,7 +1052,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="197" column="30" selection-start-line="197" selection-start-column="30" selection-end-line="197" selection-end-column="30" />
@@ -1126,7 +1121,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="107" selection-start-line="130" selection-start-column="12" selection-end-line="130" selection-end-column="107" />
@@ -1156,11 +1151,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding>
-            <marker date="1449197782773" expanded="true" signature="1449:1493" placeholder="insert into truefalse..." />
-            <marker date="1449197782773" expanded="true" signature="2334:2383" placeholder="insert into shortanswer..." />
-            <marker date="1449197782773" expanded="true" signature="3449:3510" placeholder="insert into multiplechoice..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1292,12 +1283,6 @@
           <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
           <folding>
             <element signature="e#0#8283#0" expanded="false" />
-            <marker date="1449198488763" expanded="true" signature="1699:1767" placeholder="select * fro..truefalse..." />
-            <marker date="1449198488763" expanded="true" signature="1829:1902" placeholder="select * fro..multiplechoice..." />
-            <marker date="1449198488763" expanded="true" signature="1961:2031" placeholder="select * fro..shortanswer..." />
-            <marker date="1449198488763" expanded="true" signature="6620:6675" placeholder="update truef..." />
-            <marker date="1449198488763" expanded="true" signature="6737:6797" placeholder="update multi..." />
-            <marker date="1449198488763" expanded="true" signature="6856:6913" placeholder="update short..." />
           </folding>
         </state>
       </provider>
@@ -1343,7 +1328,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TriviaUtil.java">
+    <entry file="file://$PROJECT_DIR$/triviaUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
@@ -1362,8 +1347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TriviaMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2777778">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.74530274">
+          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
           <folding />
         </state>
       </provider>
